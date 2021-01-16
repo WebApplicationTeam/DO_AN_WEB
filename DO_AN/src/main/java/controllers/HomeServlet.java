@@ -21,7 +21,7 @@ public class HomeServlet extends HttpServlet {
         switch (path)
         {
             case "/Index":
-                break;
+
             case "/About":
                 break;
             default:
