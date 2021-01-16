@@ -1,5 +1,7 @@
 package controllers;
 
+import utils.ServletUtils;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +23,13 @@ public class HomeServlet extends HttpServlet {
         switch (path)
         {
             case "/Index":
-
+                ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
+                break;
             case "/About":
+                ServletUtils.forward("/views/vwHome/About.jsp", request, response);
                 break;
             default:
+                ServletUtils.forward("/views/404.jsp", request, response);
                 break;
         }
     }

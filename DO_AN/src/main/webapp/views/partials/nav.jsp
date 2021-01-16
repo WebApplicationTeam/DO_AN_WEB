@@ -1,41 +1,122 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <a class="navbar-brand" href="#">
-        <i class="fa fa-home fa-lg"></i>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+<div class="nav">
+    <div class="menu-wrap">
+        <input type="checkbox" name="" id="check">
+        <a href="#home">
+            <div class="logo">
+                Udemy
+            </div>
+        </a>
+        <div class="nav-btn">
+            <div style="display: flex;">
+                <div class="nav-links dropdown">
+                    <a href="#Categries">
+                            <span class="menu-item ">
+                                Categories
+                            </span>
+                    </a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <div>
+                                    <header>CNTT</header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">IT</a></li>
+                                        <li><a href="#">Design</a></li>
+                                        <li><a href="#">AI</a></li>
+                                        <li><a href="#">Machine Learning</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <header>CNTT</header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">IT</a></li>
+                                        <li><a href="#">Design</a></li>
+                                        <li><a href="#">AI</a></li>
+                                        <li><a href="#">Machine Learning</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <header>CNTT</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">IT</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">AI</a></li>
+                                    <li><a href="#">Machine Learning</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>CNTT</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">IT</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">AI</a></li>
+                                    <li><a href="#">Machine Learning</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>CNTT</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">IT</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">AI</a></li>
+                                    <li><a href="#">Machine Learning</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>CNTT</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">IT</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">AI</a></li>
+                                    <li><a href="#">Machine Learning</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                Search
-            </button>
-        </form>
+            </div>
+            <div class="menu">
+                <div class= search-box>
+                    <div class="elementSearch">
+                        <a href="">
+                            <i class='bx bx-search-alt cart-btn'></i>
+                        </a>
+                        <input type="text" name="txtSearch" id="" class="search" placeholder="Search for anything">
+                    </div>
+                </div>
+            </div>
+            <a href="#UdemyforBusiness" >
+                    <span class="menu-item hiden">
+                        Udemy for Business
+                    </span>
+            </a>
+            <a href="#Teach">
+                    <span class="menu-item">
+                        Teach on Udemy
+                    </span>
+            </a>
+            <div class="cart-btn cart">
+                <a class='bx bx-cart-alt'></a>
+            </div>
+            <a href="" class="btn transparent">Log in</a>
+            <a href="" class="btn solid">Sign up</a>
+        </div>
+        <div class= search-box1>
+            <div class="elementSearch1">
+                <a href="">
+                    <i class='bx bx-search-alt cart-btn'></i>
+                </a>
+                <input type="text" name="txtSearch" id="#" class="search1" placeholder="Search for anything">
+            </div>
+        </div>
+        <div class="cart-btn cart1">
+            <a class='bx bx-cart-alt'></a>
+        </div>
+        <div class="hamburger-menu-container">
+            <div class="hamburger-menu">
+                <div></div>
+            </div>
+        </div>
     </div>
-</nav>
+</div>
