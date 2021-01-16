@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DO_AN:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>DO_AN</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="DO_AN-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="DO_AN:war exploded" />
+    </root>
+  </artifact>
+</component>
