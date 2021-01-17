@@ -50,19 +50,59 @@
                 <a href="#">Explore Excel></a>
             </div>
             <div class="row tag">
-                ne
+                <p class="text1">
+                    Built websites and applications with Web Development
+                </p>
+                <p>
+                    The world of web development is as wide as the internet itself.<br>
+                    Much of our social and vocation lives play out on the internet,<br>
+                    which prompt new industries aimed at creating, managing.
+                </p>
+                <a href="#">Explore Web Development></a>
             </div>
             <div class="row tag">
-                cac
+                <p class="text1">
+                    Grow your software development skills with JavaScript
+                </p>
+                <p>
+                    JavaScript is one of the most ubiquitous programming<br>
+                    languages on the planet, mostly because it's the backbone of<br>
+                    interactive web applications.
+                </p>
+                <a href="#">Explore JavaScript></a>
             </div>
             <div class="row tag">
-                ban
+                <p class="text1">
+                    Lead data-driven decisions with Data Science
+                </p>
+                <p>
+                   Data science is everywhere. Better data science practices are <br>
+                    allowing corporation to cut unnecessary costs, automate<br>
+                    computing, and analyze markets.
+                </p>
+                <a href="#">Explore Data Science></a>
             </div>
             <div class="row tag">
-                oi
+                <p class="text1">
+                    Become an expert in cloud computing with AWS Certification
+                </p>
+                <p>
+                   Because Amazon WEb Services is a constantly evolving cloud<br>
+                    ecosystem, staying up with new AWS services and features can<br>
+                    be a chore.
+                </p>
+                <a href="#">Explore AWS Certification></a>
             </div>
             <div class="row tag">
-                hu
+                <p class="text1">
+                    Expand your creative skillset with Drawing
+                </p>
+                <p>
+                   Besides being the foundation upon which most art forms are<br>
+                    built drawing is also an excellent way to relive stress and feed <br>
+                    your inner creativity.
+                </p>
+                <a href="#">Explore Drawing></a>
             </div>
 
         </div>
