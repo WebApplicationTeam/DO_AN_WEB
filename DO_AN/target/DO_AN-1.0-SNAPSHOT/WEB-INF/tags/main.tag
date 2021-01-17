@@ -1,6 +1,6 @@
 <%@tag pageEncoding="utf-8" %>
-<%--<%@attribute name="css" fragment="true" required="false" %>
-<%@attribute name="js" fragment="true" required="false" %>--%>
+<%@attribute name="css" fragment="true" required="false" %>
+<%@attribute name="js" fragment="true" required="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 
 
 
- <%--   <jsp:invoke fragment="css"/>--%>
+    <jsp:invoke fragment="css"/>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<%--<jsp:invoke fragment="js"/>--%>
+<jsp:invoke fragment="js"/>
 </body>
 
 </html>
