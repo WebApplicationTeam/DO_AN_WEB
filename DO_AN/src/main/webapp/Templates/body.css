@@ -1,0 +1,33 @@
+.bo{
+    background-color: yellow;
+    height: 400px;
+    margin-top: 20px;
+}
+.text{
+    margin-top: 30px;
+}
+.tag {
+    display: none;
+    border: 1px solid #0066ff;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.active_tag {
+    display: block;
+}
+#tool_group{
+    margin-right: auto;
+    margin-left: auto;
+}
+.tool_bar{
+    margin-left: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+.text1{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
