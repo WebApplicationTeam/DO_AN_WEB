@@ -1,0 +1,8 @@
+.error{
+    float: right;;
+    font-weight:500;
+    color: orange;
+}
+#Question{
+    font-size: 20px;
+}

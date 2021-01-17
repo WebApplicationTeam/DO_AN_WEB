@@ -8,7 +8,7 @@
                 <h4>Profile</h4>
             </div>
             <div class="card-body">
-                Thông tin cá nhân người dùng đang đăng nhập.
+
             </div>
         </div>
     </jsp:body>
