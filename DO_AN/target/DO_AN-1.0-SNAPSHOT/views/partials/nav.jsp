@@ -22,11 +22,25 @@
                     Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< Updated upstream
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here.</a>
+=======
+                    <a class="dropdown-item" href="#">Development</a>
+                    <a class="dropdown-item" href="#">Business</a>
+                    <a class="dropdown-item" href="#">Finance & Accounting</a>
+                    <a class="dropdown-item" href="#">IT & Software</a>
+                    <a class="dropdown-item" href="#">Office Productivity</a>
+                    <a class="dropdown-item" href="#">Personal Development</a>
+                    <a class="dropdown-item" href="#">Marketing</a>
+                    <a class="dropdown-item" href="#">Lifestyle</a>
+                    <a class="dropdown-item" href="#">Photography & Video</a>
+                    <a class="dropdown-item" href="#">Teaching & Academics</a>
+>>>>>>> Stashed changes
                 </div>
+
             </li>
             <li>
                 <div class="form-inline my-2 my-lg-0">
