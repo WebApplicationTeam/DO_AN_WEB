@@ -265,20 +265,54 @@
         <div class="row align-items-center">
             <div class="col">
                 <p class="txt4">Deployment</p>
+                <a class="txt4" href="#">Python</a>
+                <p>23,629,939 students</p>
+                <a class="txt4" href="#">Web Development</a>
+                <p>8,061,989 students</p>
+                <a class="txt4" href="#">Machine Learning</a>
+                <p>4,597,425 students</p>
             </div>
             <div class="col">
                 <p class="txt4">Business</p>
+                <a class="txt4" href="#">Financial Analysis </a>
+                <p>913,881 students</p>
+                <a class="txt4" href="#">SQL</a>
+                <p>3,520,304 students</p>
+                <a class="txt4" href="#">PMP</a>
+                <p>1,243,449 students</p>
+
             </div>
             <div class="col">
                 <p class="txt4">IT and Software</p>
+                <a class="txt4" href="#">AWS Certification </a>
+                <p>3,582,843 students</p>
+                <a class="txt4" href="#">Ethical Hacking</a>
+                <p>7,685,271 students</p>
+                <a class="txt4" href="#">Cyber Security</a>
+                <p>2,615,660 students</p>
             </div>
             <div class="col">
                 <p class="txt4">Design</p>
+                <a class="txt4" href="#">Photoshop</a>
+                <p>8,285,580 students</p>
+                <a class="txt4" href="#">Graphic Design</a>
+                <p>2,387,768 students</p>
+                <a class="txt4" href="#">Drawing</a>
+                <p>2,055,275 students</p>
             </div>
+        </div>
+        <button type="button" class="btn btn-secondary">Explore more</button>
+        <div class="center">
+            <h2 style="font-weight: bold"> Become an instructor</h2>
+
+            <button type="button" class="btn btn-outline-primary">Start teaching today</button>
+        </div>
+        <div class="center">
+            <h3>Trusted by company of all size</h3>
+
         </div>
 
 
-
-
     </jsp:body>
+
 </t:main>

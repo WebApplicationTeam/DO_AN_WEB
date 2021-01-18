@@ -24,6 +24,9 @@
 <div class="container">
     <jsp:doBody/>
 </div>
+<jsp:include page="../../views/partials/footer.jsp"/>
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,14 +47,7 @@
         panels.forEach(p => p.classList.remove("active_tag"));
         panels[n - 1].classList.add("active_tag");
     }
-    // //Thay tag o ben duoi contents
-    // document.querySelectorAll("nav a").forEach(e => e.addEventListener("click", _ => change(e.dataset.id)));
-    //
-    // function change(n) {
-    //     let panels = document.querySelectorAll(".content");
-    //     panels.forEach(p => p.classList.remove("active_cont"));
-    //     panels[n - 1].classList.add("active_cont");
-    // }
+
 </script>
 <jsp:invoke fragment="js"/>
 </body>
