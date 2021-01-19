@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
+<jsp:useBean id="category" scope="session" type="beans.Category"/>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/Home">
