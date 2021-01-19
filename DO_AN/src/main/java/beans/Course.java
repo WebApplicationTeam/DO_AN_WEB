@@ -1,15 +1,17 @@
 package beans;
 
+import java.util.Date;
+
 public class Course {
     int course_id, course_participant, teacher_id, amount_chapter, complete, cat_id;
     String course_name, course_tiny_desc, course_full_desc,learned;
     float rating,price;
+    Date last_update;
 
     public Course() {
     }
 
-
-    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, int complete, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned, float rating, float price) {
+    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, int complete, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned, float rating, float price, Date last_update) {
         this.course_id = course_id;
         this.course_participant = course_participant;
         this.teacher_id = teacher_id;
@@ -22,18 +24,8 @@ public class Course {
         this.learned = learned;
         this.rating = rating;
         this.price = price;
+        this.last_update = last_update;
     }
-
-    public Course(int course_id, int teacher_id, String course_name, String course_tiny_desc, String learned, float rating, float price) {
-        this.course_id = course_id;
-        this.teacher_id = teacher_id;
-        this.course_name = course_name;
-        this.course_tiny_desc = course_tiny_desc;
-        this.learned = learned;
-        this.rating = rating;
-        this.price = price;
-    }
-
 
     public int getCourse_id() {
         return course_id;
@@ -131,6 +123,13 @@ public class Course {
         this.price = price;
     }
 
+    public Date getLast_update() {
+        return last_update;
+    }
+
+    public void setLast_update(Date last_update) {
+        this.last_update = last_update;
+    }
 
     @Override
     public String toString() {
@@ -147,6 +146,7 @@ public class Course {
                 ", learned='" + learned + '\'' +
                 ", rating=" + rating +
                 ", price=" + price +
+                ", last_update=" + last_update +
                 '}';
     }
 }
