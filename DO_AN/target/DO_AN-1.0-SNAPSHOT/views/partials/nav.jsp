@@ -1,8 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page contentType="text/html; charset=utf-8" %>
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
-<jsp:useBean id="category" scope="session" type="beans.Category"/>
-
+<jsp:useBean id="category" scope="request" type="java.util.List<beans.Category>"/>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/Home">
@@ -24,24 +23,11 @@
                     Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
-
-
-                    <a class="dropdown-item" href="#">Development</a>
-                    <a class="dropdown-item" href="#">Business</a>
-                    <a class="dropdown-item" href="#">Finance & Accounting</a>
-                    <a class="dropdown-item" href="#">IT & Software</a>
-                    <a class="dropdown-item" href="#">Office Productivity</a>
-                    <a class="dropdown-item" href="#">Personal Development</a>
-                    <a class="dropdown-item" href="#">Marketing</a>
-                    <a class="dropdown-item" href="#">Lifestyle</a>
-                    <a class="dropdown-item" href="#">Photography & Video</a>
-                    <a class="dropdown-item" href="#">Teaching & Academics</a>
-
-
-
-
+                    <c:forEach var="c" items="${category}">
+                        <a href="#" class="list-group-item list-group-item-action">
+                                ${c.cat_name}
+                        </a>
+                    </c:forEach>
                 </div>
 
             </li>

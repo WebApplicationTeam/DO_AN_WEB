@@ -1,9 +1,6 @@
 package controllers;
 
-import beans.Category;
 import beans.Course;
-import models.CategoryModels;
-import models.CourseModel;
 import utils.ServletUtils;
 
 import javax.servlet.ServletException;
@@ -14,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", urlPatterns = "/Home/*")
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "CourseServlet")
+public class CourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -28,15 +25,11 @@ public class HomeServlet extends HttpServlet {
         switch (path)
         {
             case "/Index":
-                List<Category> list = CategoryModels.getAll();
-                request.setAttribute("category", list);
-                List<Course> listcourse = CourseModel.getTop10();
-                request.setAttribute("coursetop10", listcourse);
 
-                ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
+                ServletUtils.forward("/views/vwCourse/Index.jsp", request, response);
                 break;
             case "/About":
-                ServletUtils.forward("/views/vwHome/About.jsp", request, response);
+                ServletUtils.forward("/views/vwCourse/About.jsp", request, response);
                 break;
             default:
                 ServletUtils.forward("/views/404.jsp", request, response);
