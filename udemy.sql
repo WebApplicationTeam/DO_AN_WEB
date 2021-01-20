@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 100414
+ Source Server Version : 100417
  Source Host           : localhost:3306
  Source Schema         : udemy
 
  Target Server Type    : MySQL
- Target Server Version : 100414
+ Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 20/01/2021 15:25:09
+ Date: 20/01/2021 08:39:34
 */
 
 SET NAMES utf8mb4;
@@ -22,32 +22,32 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category`  (
-  `cat_id` int(11) NOT NULL AUTO_INCREMENT,
-  `cat_name` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `cat_id` int NOT NULL,
+  `cat_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `cat_desc_1` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `cat_desc_2` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`cat_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES (2, 'Mobile Development', 'nothing', 'mobile');
-INSERT INTO `category` VALUES (7, 'Web Development', NULL, NULL);
+INSERT INTO `category` VALUES (1, 'Web Development', 'Built websites and applications with Web Development', 'The world of web development is as wide as the internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed at creating, managing, and debugging the websites and applications that we increasingly rely on.');
+INSERT INTO `category` VALUES (2, 'Mobile App Development', 'mobile app is here', 'yeah yeah mobile app hihihi');
 
 -- ----------------------------
 -- Table structure for content
 -- ----------------------------
 DROP TABLE IF EXISTS `content`;
 CREATE TABLE `content`  (
-  `course_id` int(11) NOT NULL,
-  `chapter` int(11) NOT NULL,
+  `course_id` int NOT NULL,
+  `chapter` int NOT NULL,
   `chapter_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `session` int(11) NOT NULL,
+  `session` int NOT NULL,
   `session_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `link` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`course_id`, `session`, `chapter`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of content
@@ -91,22 +91,22 @@ INSERT INTO `content` VALUES (15, 1, 'Introduce', 1, 'Introduce', NULL);
 -- ----------------------------
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course`  (
-  `course_id` int(11) NOT NULL,
+  `course_id` int NOT NULL,
   `course_name` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `course_tiny_desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `course_full_desc` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `rating` float(2, 1) NULL DEFAULT NULL,
-  `course_participant` int(11) NULL DEFAULT NULL,
-  `teacher_id` int(11) NULL DEFAULT NULL,
-  `last_update` datetime(0) NULL DEFAULT NULL,
-  `amount_chapter` int(11) NULL DEFAULT NULL,
+  `course_participant` int NULL DEFAULT NULL,
+  `teacher_id` int NULL DEFAULT NULL,
+  `last_update` datetime NULL DEFAULT NULL,
+  `amount_chapter` int NULL DEFAULT NULL,
   `complete` bit(1) NULL DEFAULT NULL,
-  `cat_id` int(11) NULL DEFAULT NULL,
+  `cat_id` int NULL DEFAULT NULL,
   `course_pic` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `price` float(10, 2) NULL DEFAULT NULL,
   `learned` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`course_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of course
@@ -132,11 +132,11 @@ INSERT INTO `course` VALUES (15, 'SwiftUI for iOS 14, iPadOS 14 and macOS 11', '
 -- ----------------------------
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE `feedback`  (
-  `course_id` int(11) NOT NULL,
-  `user_id` int(11) NULL DEFAULT NULL,
+  `course_id` int NOT NULL,
+  `user_id` int NULL DEFAULT NULL,
   `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  `rate` int(11) NULL DEFAULT NULL
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `rate` int NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of feedback
@@ -153,32 +153,33 @@ INSERT INTO `feedback` VALUES (0, NULL, NULL, NULL);
 -- ----------------------------
 DROP TABLE IF EXISTS `profile`;
 CREATE TABLE `profile`  (
-  `user_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
   `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `function` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'nghe nghiep',
   `biograpgy` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'tieu su',
+  `avatar_pic` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of profile
 -- ----------------------------
-INSERT INTO `profile` VALUES (1, 'Trần', 'Hoàng Long', 'Student', 'best student of the year');
-INSERT INTO `profile` VALUES (2, 'Nguyễn', 'Văn Huy', 'Teacher', 'bad teacher of the decade');
-INSERT INTO `profile` VALUES (3, 'Trần', 'Gia Phúc', 'Student', 'too lazy to write biography');
-INSERT INTO `profile` VALUES (4, 'Nguyễn ', 'Đức Hảo', 'Admin', 'I\'m the boss');
-INSERT INTO `profile` VALUES (5, 'Trần', 'Công Tử', 'Teacher', 'nothing');
+INSERT INTO `profile` VALUES (1, 'Trần', 'Hoàng Long', 'Student', 'best student of the year', NULL);
+INSERT INTO `profile` VALUES (2, 'Nguyễn', 'Văn Huy', 'Teacher', 'bad teacher of the decade', NULL);
+INSERT INTO `profile` VALUES (3, 'Trần', 'Gia Phúc', 'Student', 'too lazy to write biography', NULL);
+INSERT INTO `profile` VALUES (4, 'Nguyễn ', 'Đức Hảo', 'Admin', 'I\'m the boss', NULL);
+INSERT INTO `profile` VALUES (5, 'Trần', 'Công Tử', 'Teacher', 'nothing', NULL);
 
 -- ----------------------------
 -- Table structure for registercourse
 -- ----------------------------
 DROP TABLE IF EXISTS `registercourse`;
 CREATE TABLE `registercourse`  (
-  `course_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `course_id` int NOT NULL,
+  `student_id` int NOT NULL,
   PRIMARY KEY (`course_id`, `student_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of registercourse
@@ -194,15 +195,15 @@ INSERT INTO `registercourse` VALUES (15, 1);
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `dob` date NOT NULL,
-  `permission` int(11) NOT NULL,
+  `permission` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
@@ -211,17 +212,16 @@ INSERT INTO `users` VALUES (1, 'admin', '$2a$12$4WO8B8pk1fOOTBre6Ljf4ukMqbXDmdUE
 INSERT INTO `users` VALUES (3, 'duchao111', '$2a$12$a7KtAZ0bOku1.er/RzBAP.WOXbr47dj/AUTgpR2001pPjrlZtQOVi', 'Háº£o', 'duchao3003@gmail.com', '2008-01-30', 0);
 INSERT INTO `users` VALUES (4, 'haohao', '$2a$12$EdKwbZay3yiQHPlXI4V9zuegwkuN1uGmxuj3fuQGJ32Nafm1dU84G', 'haohao', 'haoxongroi123@gmail.com', '2020-12-04', 0);
 INSERT INTO `users` VALUES (5, 'phuctran', '$2a$12$110A22mCJVaSK2tHmPM/6e0Dkk.FtSSvZDXvMsgizL1mhyQq3CX/q', 'PhÃºc', 'phuc@gmail.com', '2020-12-30', 0);
-INSERT INTO `users` VALUES (6, 'phuctg', '$2a$12$I.sLJsESImu64gKNZKQPN.tuMI9uNlqg1iBgf2GPrX/zzhOQyZ3v.', 'Phuc', 'phuctg2106@gmail.com', '2021-01-23', 0);
 
 -- ----------------------------
 -- Table structure for wishlist
 -- ----------------------------
 DROP TABLE IF EXISTS `wishlist`;
 CREATE TABLE `wishlist`  (
-  `course_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `course_id` int NOT NULL,
+  `student_id` int NOT NULL,
   PRIMARY KEY (`course_id`, `student_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of wishlist
