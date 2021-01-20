@@ -9,17 +9,17 @@
     <schema id="2" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="3" parent="1" name="mychat_db">
+    <schema id="3" parent="1" name="mysql">
       <Collation>utf8mb4_general_ci</Collation>
     </schema>
-    <schema id="4" parent="1" name="mysql">
-      <Collation>utf8mb4_general_ci</Collation>
-    </schema>
-    <schema id="5" parent="1" name="performance_schema">
+    <schema id="4" parent="1" name="performance_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="6" parent="1" name="phpmyadmin">
+    <schema id="5" parent="1" name="phpmyadmin">
       <Collation>utf8_bin</Collation>
+    </schema>
+    <schema id="6" parent="1" name="qlbh">
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="7" parent="1" name="test">
       <Collation>latin1_swedish_ci</Collation>
@@ -28,8 +28,8 @@
       <Current>1</Current>
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="9" parent="1" name="webpage">
-      <Collation>utf8_general_ci</Collation>
+    <schema id="9" parent="1" name="web_app">
+      <Collation>utf8mb4_general_ci</Collation>
     </schema>
     <collation id="10" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1057,243 +1057,249 @@
       <ObjectGrants>ALL PRIVILEGES!
 </ObjectGrants>
     </user>
-    <user id="336" parent="1" name="user_name">
-      <Host>%</Host>
-    </user>
-    <table id="337" parent="8" name="category"/>
-    <table id="338" parent="8" name="content"/>
-    <table id="339" parent="8" name="course"/>
-    <table id="340" parent="8" name="feedback"/>
-    <table id="341" parent="8" name="profile"/>
-    <table id="342" parent="8" name="registercourse"/>
-    <table id="343" parent="8" name="users">
+    <table id="336" parent="8" name="category"/>
+    <table id="337" parent="8" name="content"/>
+    <table id="338" parent="8" name="course"/>
+    <table id="339" parent="8" name="feedback"/>
+    <table id="340" parent="8" name="profile"/>
+    <table id="341" parent="8" name="registercourse"/>
+    <table id="342" parent="8" name="users">
       <Engine>MyISAM</Engine>
       <Collation>utf8_unicode_ci</Collation>
     </table>
-    <table id="344" parent="8" name="wishlist"/>
-    <column id="345" parent="337" name="cat_id">
+    <table id="343" parent="8" name="wishlist"/>
+    <column id="344" parent="336" name="cat_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="346" parent="337" name="cat_name">
+    <column id="345" parent="336" name="cat_name">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>text|0s</DataType>
     </column>
-    <key id="347" parent="337" name="PRIMARY">
+    <column id="346" parent="336" name="cat_desc_1">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="347" parent="336" name="cat_desc_2">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="348" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>cat_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="348" parent="338" name="course_id">
+    <column id="349" parent="337" name="course_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="349" parent="338" name="chapter">
+    <column id="350" parent="337" name="chapter">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="350" parent="338" name="chapter_name">
+    <column id="351" parent="337" name="chapter_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="351" parent="338" name="session">
+    <column id="352" parent="337" name="session">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="352" parent="338" name="session_name">
+    <column id="353" parent="337" name="session_name">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="353" parent="338" name="link">
+    <column id="354" parent="337" name="link">
       <Position>6</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="354" parent="338" name="PRIMARY">
+    <key id="355" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>course_id
 session
 chapter</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="355" parent="339" name="course_id">
+    <column id="356" parent="338" name="course_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="356" parent="339" name="course_name">
+    <column id="357" parent="338" name="course_name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="357" parent="339" name="course_tiny_desc">
+    <column id="358" parent="338" name="course_tiny_desc">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="358" parent="339" name="course_full_desc">
+    <column id="359" parent="338" name="course_full_desc">
       <Position>4</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="359" parent="339" name="rating">
+    <column id="360" parent="338" name="rating">
       <Position>5</Position>
-      <DataType>float(255)|0s</DataType>
+      <DataType>float(2,1 digit)|0s</DataType>
     </column>
-    <column id="360" parent="339" name="course_participant">
+    <column id="361" parent="338" name="course_participant">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="361" parent="339" name="teacher_id">
+    <column id="362" parent="338" name="teacher_id">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="362" parent="339" name="last_update">
+    <column id="363" parent="338" name="last_update">
       <Position>8</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="363" parent="339" name="amount_chapter">
+    <column id="364" parent="338" name="amount_chapter">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="364" parent="339" name="complete">
+    <column id="365" parent="338" name="complete">
       <Position>10</Position>
       <DataType>bit(1)|0s</DataType>
     </column>
-    <column id="365" parent="339" name="cat_id">
+    <column id="366" parent="338" name="cat_id">
       <Position>11</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="366" parent="339" name="price">
+    <column id="367" parent="338" name="course_pic">
       <Position>12</Position>
-      <DataType>float(10,2 digit)|0s</DataType>
-    </column>
-    <column id="367" parent="339" name="learned">
-      <Position>13</Position>
       <DataType>text|0s</DataType>
     </column>
-    <key id="368" parent="339" name="PRIMARY">
+    <column id="368" parent="338" name="price">
+      <Position>13</Position>
+      <DataType>float(10,2 digit)|0s</DataType>
+    </column>
+    <column id="369" parent="338" name="learned">
+      <Position>14</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <key id="370" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>course_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="369" parent="340" name="course_id">
+    <column id="371" parent="339" name="course_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="370" parent="340" name="user_id">
+    <column id="372" parent="339" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="371" parent="340" name="comment">
+    <column id="373" parent="339" name="comment">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="372" parent="340" name="rate">
+    <column id="374" parent="339" name="rate">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="373" parent="341" name="user_id">
+    <column id="375" parent="340" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="374" parent="341" name="first_name">
+    <column id="376" parent="340" name="first_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="375" parent="341" name="last_name">
+    <column id="377" parent="340" name="last_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="376" parent="341" name="function">
+    <column id="378" parent="340" name="function">
       <Position>4</Position>
       <Comment>nghe nghiep</Comment>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="377" parent="341" name="biograpgy">
+    <column id="379" parent="340" name="biograpgy">
       <Position>5</Position>
       <Comment>tieu su</Comment>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="378" parent="341" name="avatar_pic">
-      <Position>6</Position>
-      <DataType>text|0s</DataType>
-    </column>
-    <key id="379" parent="341" name="PRIMARY">
+    <key id="380" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="380" parent="342" name="course_id">
+    <column id="381" parent="341" name="course_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="381" parent="342" name="student_id">
+    <column id="382" parent="341" name="student_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="382" parent="342" name="PRIMARY">
+    <key id="383" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>course_id
 student_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="383" parent="343" name="id">
+    <column id="384" parent="342" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="384" parent="343" name="username">
+    <column id="385" parent="342" name="username">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="385" parent="343" name="password">
+    <column id="386" parent="342" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="386" parent="343" name="name">
+    <column id="387" parent="342" name="name">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="387" parent="343" name="email">
+    <column id="388" parent="342" name="email">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="388" parent="343" name="dob">
+    <column id="389" parent="342" name="dob">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="389" parent="343" name="permission">
+    <column id="390" parent="342" name="permission">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="390" parent="343" name="PRIMARY">
+    <key id="391" parent="342" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="391" parent="344" name="course_id">
+    <column id="392" parent="343" name="course_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="392" parent="344" name="student_id">
+    <column id="393" parent="343" name="student_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="393" parent="344" name="PRIMARY">
+    <key id="394" parent="343" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>course_id
 student_id</ColNames>
