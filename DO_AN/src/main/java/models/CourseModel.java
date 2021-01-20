@@ -58,6 +58,14 @@ public class CourseModel {
             return Optional.ofNullable(list.get(0));
         }
     }
+    public static void delete(int id) {
+        final String sql = "delete from course where course_id = :id";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
 }
 
 
