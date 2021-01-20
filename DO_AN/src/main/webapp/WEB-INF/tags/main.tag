@@ -2,7 +2,7 @@
 <%@attribute name="css" fragment="true" required="false" %>
 <%@attribute name="js" fragment="true" required="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="coursetop10" scope="request" type="java.util.List<beans.Course>"/>
+<%--<jsp:useBean id="coursetop10" scope="request" type="java.util.List<beans.Course>"/>--%>
 
 <!DOCTYPE html>
 <html lang="en">
