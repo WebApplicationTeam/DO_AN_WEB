@@ -1,7 +1,8 @@
 <%@tag pageEncoding="utf-8" %>
 <%@attribute name="css" fragment="true" required="false" %>
 <%@attribute name="js" fragment="true" required="false" %>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="coursetop10" scope="request" type="java.util.List<beans.Course>"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +13,7 @@
     <title>E-Commerce Web Application</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <jsp:invoke fragment="css"/>
 
@@ -47,6 +49,19 @@
         panels.forEach(p => p.classList.remove("active_tag"));
         panels[n - 1].classList.add("active_tag");
     }
+
+    const cardhower=$(".card_hover");
+    const title=$(".card-title");
+
+
+    $(window).on("load",function (){
+
+            cardhower.hover(
+                function (){
+                    //alert("cardtitle");
+                }
+            )
+    });
 
 </script>
 <jsp:invoke fragment="js"/>

@@ -10,30 +10,34 @@
 </jsp:attribute>
     <jsp:body>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide mt-3" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="${pageContext.request.contextPath}/public/image/background1.jpg" class="d-block w-100" alt="...">
+                    <img src="${pageContext.request.contextPath}/public/image/2.jpg" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="${pageContext.request.contextPath}/public/image/racwjbu.jpg" class="d-block w-100" alt="...">
+                    <img src="${pageContext.request.contextPath}/public/image/1.png" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="${pageContext.request.contextPath}/public/image/background1.jpg" class="d-block w-100" alt="...">
+                    <img src="${pageContext.request.contextPath}/public/image/3.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="${pageContext.request.contextPath}/public/image/4.png" class="d-block w-100">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
         <div class="text">
@@ -44,7 +48,6 @@
         </div>
         <div class="row">
             <div class="d-flex" id="tool_group">
-
                 <c:forEach var="c" items="${category}">
                     <a data-id="${c.cat_id}"  class="tool_bar">
                             ${c.cat_name}
@@ -52,6 +55,9 @@
                 </c:forEach>
             </div>
         </div>
+
+
+
         <div class="container">
             <c:forEach var="c" items="${category}">
                 <div class="row tag">
@@ -67,18 +73,47 @@
             </c:forEach>
 
         </div>
+
+
+        <div id="carouselExampleIndicators" class="carousel slide mt-3" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
         <div class="card-deck">
             <div class="row">
                 <c:forEach var="coursetop10" items="${coursetop10}">
                     <div class="col-sm-4 mb-3">
-
-                        <div class="card h-100">
+                        <div class="card h-100 card_hover">
                             <img src="..." class="card-img-top">
-                            <div class="card-body">
+                            <div class="card-body ">
                                 <h5 class="card-title">${coursetop10.course_name}</h5>
                                 <p class="card-text">${coursetop10.course_tiny_desc}</p>
                                 <p class="card-text">${coursetop10.rating}</p>
-                                <p class="card-text">${coursetop10.price}</p>
+                                <p class="card-text card_price">${coursetop10.price}</p>
+                                <div class="ui-but">
+                                    <a  href="#" class="btn btn-outline-primary">Join now</a>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                </div>
+
                             </div>
                         </div>
                     </div>
