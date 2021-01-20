@@ -14,11 +14,6 @@ public class Category {
         this.cat_desc_2 = cat_desc_2;
     }
 
-    public Category(int cat_id, String cat_name) {
-        this.cat_id = cat_id;
-        this.cat_name = cat_name;
-    }
-
     public int getCat_id() {
         return cat_id;
     }

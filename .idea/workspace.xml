@@ -4,7 +4,83 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ceb0388-02ff-4d67-8212-7475f47c32ea" name="Default Changelist" comment="" />
+    <list default="true" id="7ceb0388-02ff-4d67-8212-7475f47c32ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/artifacts/DO_AN_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/artifacts/DO_AN_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/dataSources/972fe308-5930-4609-b52a-3c4c9887b1a4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/dataSources/972fe308-5930-4609-b52a-3c4c9887b1a4/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__at_favre_lib_bcrypt_0_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__at_favre_lib_bytes_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_impl_1_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_spec_1_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/libraries/Maven__org_sql2o_sql2o_1_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/DO_AN.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/beans/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/beans/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/controllers/AccountServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/controllers/CourseServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/controllers/HomeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/filters/AuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/filters/LayoutFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/filters/SessionInitFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/models/CourseModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/models/UserModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/utils/DbUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/java/utils/ServletUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/Templates/Register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/Templates/body.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/WEB-INF/tags/image/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/WEB-INF/tags/main.tag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/public/image/background1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/public/image/racwjbu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/404.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/partials/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/vwAccount/Login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/vwAccount/Profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/vwAccount/Register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/vwCourse/Index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/vwHome/About.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/src/main/webapp/views/vwHome/Index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/Templates/Register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/Templates/body.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/WEB-INF/tags/Style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/WEB-INF/tags/image/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/WEB-INF/tags/main.tag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/public/image/background1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/public/image/racwjbu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/404.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/partials/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/partials/left.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/vwAccount/Login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/vwAccount/Profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/vwAccount/Register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/vwHome/About.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DO_AN/target/DO_AN-1.0-SNAPSHOT/views/vwHome/Index.jsp" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,21 +99,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/DO_AN" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="SQLPlugin.ProjectConfiguration">
+    <queries />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,6 +116,7 @@
       <updated>1610843440758</updated>
       <workItem from="1610843444403" duration="42000" />
       <workItem from="1610891074226" duration="59000" />
+      <workItem from="1611133884194" duration="16000" />
     </task>
     <servers />
   </component>
