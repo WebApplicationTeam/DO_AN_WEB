@@ -57,7 +57,7 @@
                             Hi, <b>${authUser.name}</b>!
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile">
+                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 Profile
                             </a>

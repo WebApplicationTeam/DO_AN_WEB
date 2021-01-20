@@ -3,15 +3,16 @@ package beans;
 import java.util.Date;
 
 public class Course {
-    int course_id, course_participant, teacher_id, amount_chapter, complete, cat_id;
+    int course_id, course_participant, teacher_id, amount_chapter, cat_id;
     String course_name, course_tiny_desc, course_full_desc,learned;
     float rating,price;
     Date last_update;
+    boolean complete;
 
     public Course() {
     }
 
-    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, int complete, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned, float rating, float price, Date last_update) {
+    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, boolean complete, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned, float rating, float price, Date last_update) {
         this.course_id = course_id;
         this.course_participant = course_participant;
         this.teacher_id = teacher_id;
@@ -59,11 +60,11 @@ public class Course {
         this.amount_chapter = amount_chapter;
     }
 
-    public int getComplete() {
+    public boolean isComplete() {
         return complete;
     }
 
-    public void setComplete(int complete) {
+    public void setComplete(boolean complete) {
         this.complete = complete;
     }
 

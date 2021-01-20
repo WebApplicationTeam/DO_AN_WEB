@@ -1,8 +1,10 @@
 package controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.Course;
 import beans.User;
 import models.UserModel;
+import models.CourseModel;
 import utils.ServletUtils;
 
 import javax.servlet.ServletException;
@@ -16,6 +18,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/Account/*")
@@ -108,6 +111,12 @@ public class AccountServlet extends HttpServlet {
                 ServletUtils.forward("/views/vwAccount/Login.jsp", request, response);
                 break;
             case "/Profile":
+                int id = Integer.parseInt(request.getParameter("id"));
+
+                List<Course> list = CourseModel.getCourseByUserID(id) ;
+                request.setAttribute("course", list);
+                List<Course> listfav = CourseModel.getFavoriteCourseByUserID(id) ;
+                request.setAttribute("favours", listfav);
                 ServletUtils.forward("/views/vwAccount/Profile.jsp", request, response);
                 break;
             case "/IsAvailable":
