@@ -50,18 +50,6 @@
         panels[n - 1].classList.add("active_tag");
     }
 
-    const cardhower=$(".card_hover");
-    const title=$(".card-title");
-
-
-    $(window).on("load",function (){
-
-            cardhower.hover(
-                function (){
-                    //alert("cardtitle");
-                }
-            )
-    });
 
 </script>
 <jsp:invoke fragment="js"/>
