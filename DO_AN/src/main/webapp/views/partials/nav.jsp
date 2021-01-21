@@ -2,6 +2,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
 
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/Home">
         UDEMY
@@ -23,7 +24,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <c:forEach var="c" items="${category}">
-                        <a href="#" class="list-group-item list-group-item-action">
+                        <a href="${pageContext.request.contextPath}/Course/ByCat?id=${c.cat_id}" class="list-group-item list-group-item-action">
                                 ${c.cat_name}
                         </a>
                     </c:forEach>

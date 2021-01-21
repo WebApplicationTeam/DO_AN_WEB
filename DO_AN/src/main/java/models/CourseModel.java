@@ -44,11 +44,26 @@ public class CourseModel {
 
         }
     }
+    public static List<Course> getcourseByCat(int id) {
+        final String sql = "select course.course_id, course.course_name, users.`name`, course.rating,  cat_name, count(feedback.`comment`) as num_cmt, course.price\n" +
+                "from ((course, category) left join feedback on course.course_id= feedback.course_id) left join  users on course.teacher_id= users.id\n" +
+                "where course.cat_id= category.cat_id and category.cat_id= :cat_id\n" +
+                "group by course.course_id ";
+
+
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("cat_id", id)
+                    .executeAndFetch(Course.class);
+
+        }
+    }
+
     public static Optional<Course> findById(int id) {
-        final String sql = "select * from course where cat_id = :id";
+        final String sql = "select * from course where course_id= :course_id";
         try (Connection con = DbUtils.getConnection()) {
             List<Course> list = con.createQuery(sql)
-                    .addParameter("cat_id", id)
+                    .addParameter("course_id", id)
                     .executeAndFetch(Course.class);
 
             if (list.size() == 0) {
@@ -58,6 +73,8 @@ public class CourseModel {
             return Optional.ofNullable(list.get(0));
         }
     }
+
+
     public static void delete(int id) {
         final String sql = "delete from course where course_id = :id";
         try (Connection con = DbUtils.getConnection()) {

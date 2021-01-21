@@ -3,8 +3,8 @@ package beans;
 import java.util.Date;
 
 public class Course {
-    int course_id, course_participant, teacher_id, amount_chapter, cat_id;
-    String course_name, course_tiny_desc, course_full_desc,learned,course_pic;
+    int course_id, course_participant, teacher_id, amount_chapter, cat_id, num_cmt;
+    String course_name, course_tiny_desc, course_full_desc,learned,course_pic, cat_name, name;
     float rating,price;
     Date last_update;
     boolean complete;
@@ -12,14 +12,11 @@ public class Course {
     public Course() {
     }
 
-
-
-    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, boolean complete, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned,String course_pic, float rating, float price, Date last_update) {
+    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned, float rating, float price, Date last_update, boolean complete) {
         this.course_id = course_id;
         this.course_participant = course_participant;
         this.teacher_id = teacher_id;
         this.amount_chapter = amount_chapter;
-        this.complete = complete;
         this.cat_id = cat_id;
         this.course_name = course_name;
         this.course_tiny_desc = course_tiny_desc;
@@ -28,7 +25,17 @@ public class Course {
         this.rating = rating;
         this.price = price;
         this.last_update = last_update;
-        this.course_pic = course_pic;
+        this.complete = complete;
+    }
+
+    public Course(int course_id, int num_cmt, String course_name, String cat_name, String name, float rating, float price) {
+        this.course_id = course_id;
+        this.num_cmt = num_cmt;
+        this.course_name = course_name;
+        this.cat_name = cat_name;
+        this.name = name;
+        this.rating = rating;
+        this.price = price;
     }
 
     public int getCourse_id() {
@@ -63,26 +70,20 @@ public class Course {
         this.amount_chapter = amount_chapter;
     }
 
-    public boolean isComplete() {
-        return complete;
-    }
-    public String getCourse_pic() {
-        return course_pic;
-    }
-
-    public void setCourse_pic(String course_pic) {
-        this.course_pic = course_pic;
-    }
-    public void setComplete(boolean complete) {
-        this.complete = complete;
-    }
-
     public int getCat_id() {
         return cat_id;
     }
 
     public void setCat_id(int cat_id) {
         this.cat_id = cat_id;
+    }
+
+    public int getNum_cmt() {
+        return num_cmt;
+    }
+
+    public void setNum_cmt(int num_cmt) {
+        this.num_cmt = num_cmt;
     }
 
     public String getCourse_name() {
@@ -117,6 +118,30 @@ public class Course {
         this.learned = learned;
     }
 
+    public String getCourse_pic() {
+        return course_pic;
+    }
+
+    public void setCourse_pic(String course_pic) {
+        this.course_pic = course_pic;
+    }
+
+    public String getCat_name() {
+        return cat_name;
+    }
+
+    public void setCat_name(String cat_name) {
+        this.cat_name = cat_name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public float getRating() {
         return rating;
     }
@@ -141,6 +166,14 @@ public class Course {
         this.last_update = last_update;
     }
 
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
@@ -149,11 +182,14 @@ public class Course {
                 ", teacher_id=" + teacher_id +
                 ", amount_chapter=" + amount_chapter +
                 ", cat_id=" + cat_id +
+                ", num_cmt=" + num_cmt +
                 ", course_name='" + course_name + '\'' +
                 ", course_tiny_desc='" + course_tiny_desc + '\'' +
                 ", course_full_desc='" + course_full_desc + '\'' +
                 ", learned='" + learned + '\'' +
                 ", course_pic='" + course_pic + '\'' +
+                ", cat_name='" + cat_name + '\'' +
+                ", name='" + name + '\'' +
                 ", rating=" + rating +
                 ", price=" + price +
                 ", last_update=" + last_update +
