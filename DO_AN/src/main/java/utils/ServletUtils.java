@@ -15,4 +15,7 @@ public class ServletUtils {
     public static void redirect(String url, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect(request.getContextPath() + url);
     }
+    public static void redirect(String url,int id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendRedirect(request.getContextPath() + url +"?id="+ id);
+    }
 }

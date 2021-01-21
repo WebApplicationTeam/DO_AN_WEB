@@ -21,6 +21,13 @@ public class User {
         this.permission = permission;
     }
 
+    public User(int id, String name, String email, Date dob) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
+    }
+
     public int getId() {
         return id;
     }

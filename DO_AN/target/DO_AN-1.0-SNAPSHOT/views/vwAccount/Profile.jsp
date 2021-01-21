@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header">
                 <h4>Profile</h4>
-                <span class="editPro"><a class="btn btn-sm btn-outline-primary" href="#" role="button">Update Profile <i class="fa fa-pencil" aria-hidden="true"></i></a></span>
+                <span class="editPro"><a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Account/EditProfile" role="button">Update Profile <i class="fa fa-pencil" aria-hidden="true"></i></a></span>
             </div>
             <div class="card-body">
                 <img alt="${authUser.email}" title="${authUser.email}" src="${pageContext.request.contextPath}/public/image/racwjbu.jpg">

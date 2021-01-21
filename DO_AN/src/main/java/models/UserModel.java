@@ -36,4 +36,15 @@ public class UserModel {
                     .executeUpdate();
         }
     }
+    public static void edit(User user) {
+        final String sql = "update users set name=:name, email=:email, dob=:dob where id=:id";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("id",user.getId())
+                    .addParameter("name", user.getName())
+                    .addParameter("email", user.getEmail())
+                    .addParameter("dob", user.getDob())
+                    .executeUpdate();
+        }
+    }
 }

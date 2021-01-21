@@ -35,6 +35,9 @@ public class AccountServlet extends HttpServlet {
             case "/Logout":
                 postLogout(request, response);
                 break;
+            case "/EditProfile":
+                updateUser(request, response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
@@ -88,7 +91,25 @@ public class AccountServlet extends HttpServlet {
             ServletUtils.forward("/views/vwAccount/Login.jsp", request, response);
         }
     }
+    private void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String email=request.getParameter("email");
+        Date dob = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        try {
+            dob = formatter.parse(request.getParameter("dob"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        User c = new User(id,name, email,dob);
+        UserModel.edit(c);
+        // Load profile
 
+        //
+        ServletUtils.redirect("/Account/Profile",id, request, response);
+
+    }
     private void postLogout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.setAttribute("auth", false);
@@ -118,6 +139,9 @@ public class AccountServlet extends HttpServlet {
                 List<Course> listfav = CourseModel.getFavoriteCourseByUserID(id) ;
                 request.setAttribute("favours", listfav);
                 ServletUtils.forward("/views/vwAccount/Profile.jsp", request, response);
+                break;
+            case "/EditProfile":
+                ServletUtils.forward("/views/vwAccount/EditProfile.jsp", request, response);
                 break;
             case "/IsAvailable":
                 String username = request.getParameter("user");
