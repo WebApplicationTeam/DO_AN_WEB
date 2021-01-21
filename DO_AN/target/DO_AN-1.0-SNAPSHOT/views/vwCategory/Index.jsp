@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<jsp:useBean id="category" scope="request" type="java.util.List<beans.Category>"/>
 <t:main>
     <jsp:body>
         <div class="card">
@@ -33,7 +33,7 @@
                             <tbody>
                             <c:forEach var="c" items="${category}">
                                 <tr>
-                                    <th scope="row">${c.cat_id}</th>
+                                    <th scope="row">${c.cat_id} </th>
                                     <td>${c.cat_name}</td>
                                     <td class="text-right">
                                         <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Admin/Category/Edit?id=${c.cat_id}" role="button">

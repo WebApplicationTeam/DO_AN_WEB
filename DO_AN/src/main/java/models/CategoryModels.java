@@ -17,9 +17,8 @@ public class CategoryModels {
         }
     }
 
-
     public static Optional<Category> findById(int id) {
-        final String sql = "select * from category where cat_id = :CatID";
+        final String sql = "select category.cat_id, cat_name,cat_desc_1, cat_desc_2, count(course_id) as num_course from category, course where category.cat_id= course.cat_id and category.cat_id = :CatID";
         try (Connection con = DbUtils.getConnection()) {
             List<Category> list = con.createQuery(sql)
                     .addParameter("CatID", id)
@@ -33,14 +32,26 @@ public class CategoryModels {
         }
     }
 
+
+
+
+
+
     public static void add(Category c) {
-        final String sql = "INSERT INTO category (cat_name) VALUES (:CatName)";
+        final String sql = "INSERT INTO category (cat_name, cat_desc_1, cat_desc_2) VALUES (:CatName, :brdesc, :fulldesc)";
         try (Connection con = DbUtils.getConnection()) {
             con.createQuery(sql)
                     .addParameter("CatName", c.getCat_name())
+                    .addParameter("brdesc", c.getCat_desc_1())
+                    .addParameter("fulldesc", c.getCat_desc_2())
                     .executeUpdate();
         }
     }
+
+
+
+
+
 
     public static void delete(int id) {
         final String sql = "delete from category where cat_id = :CatID";

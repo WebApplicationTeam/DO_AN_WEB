@@ -1,10 +1,23 @@
 package beans;
 
 public class Category {
-    int cat_id;
-    String cat_name, cat_desc_1, cat_desc_2;
+   int cat_id, num_course;
+   String cat_name, cat_desc_1, cat_desc_2;
 
     public Category() {
+    }
+
+    public Category(int cat_id, String cat_name) {
+        this.cat_id = cat_id;
+        this.cat_name = cat_name;
+    }
+
+    public Category(int cat_id, int num_course, String cat_name, String cat_desc_1, String cat_desc_2) {
+        this.cat_id = cat_id;
+        this.num_course = num_course;
+        this.cat_name = cat_name;
+        this.cat_desc_1 = cat_desc_1;
+        this.cat_desc_2 = cat_desc_2;
     }
 
     public Category(int cat_id, String cat_name, String cat_desc_1, String cat_desc_2) {
@@ -14,17 +27,20 @@ public class Category {
         this.cat_desc_2 = cat_desc_2;
     }
 
-    public Category(int cat_id, String cat_name) {
-        this.cat_id = cat_id;
-        this.cat_name = cat_name;
-    }
-
     public int getCat_id() {
         return cat_id;
     }
 
     public void setCat_id(int cat_id) {
         this.cat_id = cat_id;
+    }
+
+    public int getNum_course() {
+        return num_course;
+    }
+
+    public void setNum_course(int num_course) {
+        this.num_course = num_course;
     }
 
     public String getCat_name() {
@@ -55,11 +71,10 @@ public class Category {
     public String toString() {
         return "Category{" +
                 "cat_id=" + cat_id +
+                ", num_course=" + num_course +
                 ", cat_name='" + cat_name + '\'' +
                 ", cat_desc_1='" + cat_desc_1 + '\'' +
                 ", cat_desc_2='" + cat_desc_2 + '\'' +
                 '}';
     }
-
-    
 }

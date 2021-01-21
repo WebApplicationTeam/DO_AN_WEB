@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="category" scope="request" type="java.util.List<beans.Category>"/>
 <jsp:useBean id="coursetop10" scope="request" type="java.util.List<beans.Course>"/>
 
 <t:main>
@@ -62,6 +61,7 @@
                     <p class="text1">
                             ${c.cat_desc_1}
                     </p>
+                    ${c.toString()}
                     <p>
                             ${c.cat_desc_2}
                     </p>

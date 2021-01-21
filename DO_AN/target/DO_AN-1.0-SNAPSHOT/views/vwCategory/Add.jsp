@@ -13,6 +13,10 @@
                     <div class="form-group">
                         <label for="txtCatName">Category</label>
                         <input type="text" class="form-control" id="txtCatName" name="CatName" autofocus>
+                        <label for="txtCatName">Brief Describe</label>
+                        <input type="text" class="form-control" id="txtbrdesc" name="brdesc">
+                        <label for="txtCatName">Full Describe</label>
+                        <input type="text" class="form-control" id="txtfulldesc" name="fulldesc">
                     </div>
                 </div>
                 <div class="card-footer">

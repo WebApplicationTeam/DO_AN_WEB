@@ -36,7 +36,9 @@ public class AdminCategoryServlet extends HttpServlet {
 
     private void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("CatName");
-        Category c = new Category(-1, name);
+        String brdesc = request.getParameter("brdesc");
+        String fulldesc = request.getParameter("fulldesc");
+        Category c = new Category(-1, name, brdesc,fulldesc);
         CategoryModels.add(c);
         ServletUtils.redirect("/Admin/Category", request, response);
     }
@@ -73,6 +75,7 @@ public class AdminCategoryServlet extends HttpServlet {
             case "/Edit":
                 int id = Integer.parseInt(request.getParameter("id"));
                 Optional<Category> c = CategoryModels.findById(id);
+
                 if (c.isPresent()) {
                     request.setAttribute("categories", c.get());
                     ServletUtils.forward("/views/vwCategory/Edit.jsp", request, response);
