@@ -1,5 +1,6 @@
 package models;
 
+import beans.Category;
 import beans.User;
 import org.sql2o.Connection;
 import utils.DbUtils;
@@ -20,6 +21,24 @@ public class UserModel {
             }
 
             return Optional.ofNullable(list.get(0));
+        }
+    }
+
+
+    public static void delete(int id) {
+        final String sql = "delete from users where id = :id";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
+    public static List<User> getUserByPermission(int per) {
+        final String sql = "select * from users where permission= :permission";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("permission", per)
+                    .executeAndFetch(User.class);
         }
     }
 

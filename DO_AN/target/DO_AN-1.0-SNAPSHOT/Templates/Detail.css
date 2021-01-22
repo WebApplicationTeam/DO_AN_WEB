@@ -1,0 +1,20 @@
+:root {
+    --primary-color: #03c6fc;
+    --background-color: #f0f3f7;
+    --secon-color: #9da2ad;
+    --grey: #7a7a7b;
+    --white: #ffffff;
+}
+
+.back-to-top {
+    position:fixed;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: .5rem;
+    z-index: 999;
+}

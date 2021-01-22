@@ -1,8 +1,10 @@
 package controllers;
-import beans.Course;
-import models.CategoryModels;
+
+import beans.User;
 import models.CourseModel;
+import models.UserModel;
 import utils.ServletUtils;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,24 +12,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-@WebServlet(name = "AdminProductServlet", urlPatterns = "/Admin/Course/*")
-public class AdminCourseServlet extends HttpServlet {
+
+@WebServlet(name = "AdminStudentManagerServlet", urlPatterns = "/Admin/StudentManager/*")
+public class AdminStudentManagerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         switch (path) {
             case "/Delete":
-                deleteCourse(request, response);
+                deleteStudent(request, response);
                 break;
             default:
-                ServletUtils.redirect("/NotFound", request, response);
+                ServletUtils.forward("/views/404.jsp", request, response);
                 break;
         }
     }
 
-    private void deleteCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        CourseModel.delete(id);
-        ServletUtils.redirect("/Admin/Course", request, response);
+        UserModel.delete(id);
+        ServletUtils.redirect("/Admin/StudentManager", request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,9 +41,9 @@ public class AdminCourseServlet extends HttpServlet {
 
         switch (path) {
             case "/Index":
-                List<Course> list = CourseModel.getAll();
-                request.setAttribute("course", list);
-                ServletUtils.forward("/views/vwCourse/Index.jsp", request, response);
+                List<User> list = UserModel.getUserByPermission(0);
+                request.setAttribute("student", list);
+                ServletUtils.forward("/views/vwStudentManager/Index.jsp", request, response);
                 break;
             default:
                 ServletUtils.forward("/views/404.jsp", request, response);
