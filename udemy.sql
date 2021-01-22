@@ -11,7 +11,7 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 21/01/2021 15:35:26
+ Date: 22/01/2021 15:03:58
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,8 @@ CREATE TABLE `category`  (
   `cat_name` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `cat_desc_1` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
   `cat_desc_2` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  PRIMARY KEY (`cat_id`) USING BTREE
+  PRIMARY KEY (`cat_id`) USING BTREE,
+  FULLTEXT INDEX `cat_name`(`cat_name`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -105,7 +106,8 @@ CREATE TABLE `course`  (
   `cat_id` int NULL DEFAULT NULL,
   `price` float(10, 2) NULL DEFAULT NULL,
   `learned` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  PRIMARY KEY (`course_id`) USING BTREE
+  PRIMARY KEY (`course_id`) USING BTREE,
+  FULLTEXT INDEX `course_name`(`course_name`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -125,7 +127,6 @@ INSERT INTO `course` VALUES (11, 'Flutter and Firebase: Create an iOS and Androi
 INSERT INTO `course` VALUES (12, 'React Native (2020): The Complete Guide (+ Redux & Hooks)', 'Beginner to advanced: develop and publish apps with React Native, React Navigation, and Redux!React Native has become in a few years an essential framework in the development of mobile applications . Based on React, which is enriched each year with new innovative and powerful concepts, React Native allows front-end developers to publish native Android and iOS applications with Javascript.\r\n\r\n\r\n\r\nAt the end of this course, you will have developed several applications and you will be able to publish them on the App Store and the Play Store . The difficulty of the concepts will be gradual: we will start with basic concepts and end with the development of an application making Http requests to API.\r\n\r\n\r\n\r\nIf you\'re new to React, don\'t panic! We will see the basic concepts of React together. You will learn everything you need to know about React to get started with React Native.\r\n\r\n\r\n\r\nYou can also contact me to ask any questions you want. Everyone is different and I understand very well that some passages can be complex. So don\'t hesitate to write to me!', 'React Native has become in a few years an essential framework in the development of mobile applications . Based on React, which is enriched each year with new innovative and powerful concepts, React Native allows front-end developers to publish native Android and iOS applications with Javascript.\r\n\r\n\r\n\r\nAt the end of this course, you will have developed several applications and you will be able to publish them on the App Store and the Play Store . The difficulty of the concepts will be gradual: we will start with basic concepts and end with the development of an application making Http requests to API.\r\n\r\n\r\n\r\nIf you\'re new to React, don\'t panic! We will see the basic concepts of React together. You will learn everything you need to know about React to get started with React Native.\r\n\r\n\r\n\r\nYou can also contact me to ask any questions you want. Everyone is different and I understand very well that some passages can be complex. So don\'t hesitate to write to me!', 5.0, 0, 2, '2020-06-21 00:00:00', 10, b'0', 2, 139.99, NULL);
 INSERT INTO `course` VALUES (13, 'iOS 14 and Swift 5.3: The Complete Course\r\n', 'Learn how to develop iOS apps for iPhone and iPad with iOS14, Xcode12 and Swift5 and UIKit', 'Welcome to the course iOS 14 and Swift 5.3: The complete course,\r\n\r\nIn this course, you will learn through more than 25 hours of videos how to develop applications for iPhone and iPad, starting from scratch and arriving at the end of the course to create complex applications.\r\n\r\nEven if you\'ve never written a line of code in your life, you\'ll be guided through the process so you can build the app of your dreams or that knows how to change professional careers.', 3.7, 0, 2, '2021-01-18 00:00:00', 10, b'0', 2, 119.99, NULL);
 INSERT INTO `course` VALUES (14, 'Creation of Mobile Applications with Android Studio and Java', 'Mobile development', 'This Course is a complete training which contains all the practical notions (100%) for the creation of Android mobile applications.\r\n\r\nYou will learn how to create Android apps using Android Studio and the JAVA programming language.\r\n\r\nEven if you have no background in computer science or development, or even if you have never programmed, you can take this training which starts from scratch.\r\n\r\nIt contains all the basics and advanced notions.\r\n\r\nYou will learn :\r\n\r\n-Java and Object Oriented programming\r\n\r\n-Databases and how to apply it in an Android application\r\n\r\n-Sending SMS\r\n\r\n-Make a phone call\r\n\r\n-Use Google Maps\r\n\r\n-Publish your app on Google Play Store\r\n\r\n-How to earn money and advertise\r\n\r\n-Program with Java\r\n\r\n-XML\r\n\r\n-Creation of graphical interfaces\r\n\r\n-and lots of things, ....', 0.5, 0, 5, '2020-09-21 00:00:00', 5, b'0', 2, 99.99, NULL);
-INSERT INTO `course` VALUES (15, 'SwiftUI for iOS 14, iPadOS 14 and macOS 11', 'Create apps for iOS14, macOS11 and iPadOS14', 'Do you know the basics of Swift and Object programming?\r\n\r\nHave you ever developed apps for iOS with Swift?\r\n\r\nDo you want to learn the latest framework from Apple?\r\n\r\n\r\n\r\nThis course on SwiftUI is therefore for you.\r\n\r\nWe will learn together step by step how to create applications with the latest Apple Framework released in June 2019 and updated in June 2020.', 4.8, 0, 5, '2020-09-20 00:00:00', 6, b'0', 2, 89.99, NULL);
 
 -- ----------------------------
 -- Table structure for feedback
@@ -187,7 +188,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 INSERT INTO `users` VALUES (1, 'admin', '$2a$12$4WO8B8pk1fOOTBre6Ljf4ukMqbXDmdUEMEJwPEC9VcP8Kvfn2bXo.', 'Admin', '', '2000-03-30', 1);
 INSERT INTO `users` VALUES (3, 'duchao111', '$2a$12$a7KtAZ0bOku1.er/RzBAP.WOXbr47dj/AUTgpR2001pPjrlZtQOVi', 'Háº£o', 'duchao3003@gmail.com', '2008-01-30', 0);
-INSERT INTO `users` VALUES (4, 'haohao', '$2a$12$EdKwbZay3yiQHPlXI4V9zuegwkuN1uGmxuj3fuQGJ32Nafm1dU84G', 'haohaoAfter', 'haoxongroi123@gmail.com', '2000-03-30', 0);
+INSERT INTO `users` VALUES (4, 'haohao', '$2a$12$EdKwbZay3yiQHPlXI4V9zuegwkuN1uGmxuj3fuQGJ32Nafm1dU84G', 'haohao', 'haoxongroi123@gmail.com', '2021-01-19', 0);
 INSERT INTO `users` VALUES (5, 'phuctran', '$2a$12$110A22mCJVaSK2tHmPM/6e0Dkk.FtSSvZDXvMsgizL1mhyQq3CX/q', 'PhÃºc', 'phuc@gmail.com', '2020-12-30', 0);
 INSERT INTO `users` VALUES (6, 'phuctg', '$2a$12$I.sLJsESImu64gKNZKQPN.tuMI9uNlqg1iBgf2GPrX/zzhOQyZ3v.', 'Phuc', 'phuctg2106@gmail.com', '2021-01-23', 0);
 
