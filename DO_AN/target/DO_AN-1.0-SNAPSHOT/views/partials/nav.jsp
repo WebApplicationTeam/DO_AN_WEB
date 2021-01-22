@@ -2,7 +2,39 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
 
+<style>
+    @media (min-width: 992px){
+        .dropdown-menu .dropdown-toggle:after {
+            border-top: .3em solid transparent;
+            border-right: 0;
+            border-bottom: .3em solid transparent;
+            border-left: .3em solid;
 
+        }
+        .dropdown-menu .dropdown-menu{
+            margin-left:0; margin-right: 0;
+
+        }
+        .dropdown-menu li{
+            position: relative;
+        }
+        .nav-item .submenu{
+            display: none;
+            position: absolute;
+            left:100%; top:-7px;
+        }
+        .nav-item .submenu-left{
+            right:100%; left:auto;
+        }
+        .dropdown-menu > li:hover{ background-color: #f1f1f1 }
+        .dropdown-menu > li:hover > .submenu{
+            display: block;
+        }
+        .dropdown-item{
+            width: 200px;
+        }
+    }
+</style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
     <a class="navbar-brand" href="${pageContext.request.contextPath}/Home">
         UDEMY
@@ -12,25 +44,33 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Categories
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            </li> <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">
                     <c:forEach var="c" items="${category}">
                         <a href="${pageContext.request.contextPath}/Course/ByCat?id=${c.cat_id}" class="list-group-item list-group-item-action">
                                 ${c.cat_name}
                         </a>
                     </c:forEach>
-                </div>
+                </a>
+                    <ul class="submenu dropdown-menu">
+                        <li><a class="dropdown-item" href="#"> All... </a></li>
+                        <li><a class="dropdown-item" href="#"> WordPress Website </a></li>
+                        <li><a class="dropdown-item" href="#"> Website Design </a></li>
+                        <li><a class="dropdown-item" href="#"> Open Source </a></li>
+                        <li><a class="dropdown-item" href="#"> Custom CMS </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
 
-            </li>
             <li>
                 <div class="form-inline my-2 my-lg-0">
                     <div class="form-inline my-2 my-lg-0 d-flex justify-content-between" style="border: teal solid 2px; border-radius: 25px" style="width: 180%">

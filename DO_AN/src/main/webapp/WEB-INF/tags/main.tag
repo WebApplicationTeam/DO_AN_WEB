@@ -49,7 +49,21 @@
         panels.forEach(p => p.classList.remove("active_tag"));
         panels[n - 1].classList.add("active_tag");
     }
-
+    $(document).on('click', '.dropdown-menu', function (e) {
+        e.stopPropagation();
+    });
+    if ($(window).width() < 992) {
+        $('.dropdown-menu a').click(function(e){
+            if($(this).attr('href') == '#')
+                e.preventDefault();
+            if($(this).next('.submenu').length){
+                $(this).next('.submenu').toggle();
+            }
+            $('.dropdown').on('hide.bs.dropdown', function () {
+                $(this).find('.submenu').hide();
+            })
+        });
+    }
 
 </script>
 <jsp:invoke fragment="js"/>
