@@ -14,7 +14,7 @@
                 <span class="editPro"><a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Account/EditProfile" role="button">Update Profile <i class="fa fa-pencil" aria-hidden="true"></i></a></span>
             </div>
             <div class="card-body">
-                <img alt="${authUser.email}" title="${authUser.email}" src="${pageContext.request.contextPath}/public/image/racwjbu.jpg">
+                <img alt="${authUser.name}" title="${authUser.email}" src="${pageContext.request.contextPath}/public/image/${authUser.name}.jpg" width="200 " height="268">
                 <p class="card-text"><span class="titlePro">Name:</span> <span> ${authUser.name}</span></p>
                 <p class="card-text"><span class="titlePro">Email: </span><span> ${authUser.email}</span></p>
                 <p class="card-text"><span class="titlePro">Date of Birth:</span> <span> ${authUser.dob}</span></p>

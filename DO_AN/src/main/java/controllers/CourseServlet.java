@@ -16,7 +16,16 @@ import java.util.Optional;
 @WebServlet(name = "CourseServlet", urlPatterns = "/Course/*")
 public class CourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String path = request.getPathInfo();
+        switch (path) {
+            case "/Search":
+                ServletUtils.redirect("/Course/Search", request, response);
+                break;
 
+            default:
+                ServletUtils.redirect("/NotFound", request, response);
+                break;
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,6 +36,12 @@ public class CourseServlet extends HttpServlet {
                 List<Course> list = CourseModel.getcourseByCat(catID);
                 request.setAttribute("course", list);
                 ServletUtils.forward("/views/vwCourse/ByCat.jsp", request, response);
+                break;
+            case "/Search":
+                String search = request.getParameter("search")  ;
+                List<Course> listSearch = CourseModel.getcourseByString(search);
+                request.setAttribute("courseSearch", listSearch);
+                ServletUtils.forward("/views/vwCourse/Search.jsp", request, response);
                 break;
             case "/Detail":
                 int cID = Integer.parseInt(request.getParameter("id"));

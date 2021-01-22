@@ -73,7 +73,20 @@ public class CourseModel {
             return Optional.ofNullable(list.get(0));
         }
     }
+    public static List<Course> getcourseByString(String search) {
+        final String sql = "select course.course_id, course_name, course_tiny_desc, course_full_desc, rating, course_participant, teacher_id, last_update, amount_chapter, complete, course.cat_id, price, learned\n"+
+                " from ((course, category) left join feedback on course.course_id= feedback.course_id) left join  users on course.teacher_id= users.id\n"+
+                " where course.cat_id=category.cat_id and (( match(course_name) against  (:search IN NATURAL LANGUAGE MODE) or course_name LIKE :search) or ( match(cat_name) against  (:search IN NATURAL LANGUAGE MODE) or cat_name LIKE :search))" +
+                "  group by course.course_id";
 
+
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("search","%"+ search + "%")
+                    .executeAndFetch(Course.class);
+
+        }
+    }
 
     public static void delete(int id) {
         final String sql = "delete from course where course_id = :id";

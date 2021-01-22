@@ -72,22 +72,23 @@
         </li>
 
             <li>
-                <div class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0" action="${pageContext.request.contextPath}/Course/Search">
                     <div class="form-inline my-2 my-lg-0 d-flex justify-content-between" style="border: teal solid 2px; border-radius: 25px" style="width: 180%">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search"  style="border: none;border-radius: 25px;background-color: transparent">
-                        <button class="btn  my-2 my-sm-0" type="submit"style="border: none">
-                            <i class="fa fa-search" aria-hidden="true"></i></button>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search"  style="border: none;border-radius: 25px;background-color: transparent" id="txtSearch" name ="search">
+                        <button class="btn  my-2 my-sm-0" type="submit" style="border: none">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
                     </div>
-                </div>
+                </form>
             </li>
         </ul>
-        <%--    <form class="form-inline my-2 my-lg-0">--%>
-        <%--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">--%>
-        <%--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">--%>
-        <%--        <i class="fa fa-search" aria-hidden="true"></i>--%>
-        <%--        Search--%>
-        <%--      </button>--%>
-        <%--    </form>--%>
+            <%--<form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                Search
+              </button>
+            </form>--%>
         <ul class="navbar-nav">
             <c:choose>
                 <c:when test="${auth}">
