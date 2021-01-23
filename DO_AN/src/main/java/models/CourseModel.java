@@ -95,6 +95,18 @@ public class CourseModel {
                     .addParameter("id", id)
                     .executeUpdate();
         }
+        final String sql_1 = "delete from feedback where course_id = :id";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql_1)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+        final String sql_2 = "delete content course where course_id = :id";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql_2)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
     }
 }
 

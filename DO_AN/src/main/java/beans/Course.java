@@ -12,6 +12,10 @@ public class Course {
     public Course() {
     }
 
+    public Course(int course_id) {
+        this.course_id = course_id;
+    }
+
     public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, String learned, float rating, float price, Date last_update, boolean complete) {
         this.course_id = course_id;
         this.course_participant = course_participant;

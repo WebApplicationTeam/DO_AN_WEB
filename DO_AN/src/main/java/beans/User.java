@@ -3,12 +3,34 @@ package beans;
 import java.util.Date;
 
 public class User {
-    int id;
+    int id, num_course;
     String username, password, name, email;
     Date dob;
     int permission;
 
     public User() {
+    }
+
+    public User(int id, int num_course) {
+        this.id = id;
+        this.num_course = num_course;
+    }
+
+    public int getNum_course() {
+        return num_course;
+    }
+
+    public void setNum_course(int num_course) {
+        this.num_course = num_course;
+    }
+
+    public User(int id, int num_course, String username, String name, String email, Date dob) {
+        this.id = id;
+        this.num_course = num_course;
+        this.username = username;
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
     }
 
     public User(int id, String username, String password, String name, String email, Date dob, int permission) {

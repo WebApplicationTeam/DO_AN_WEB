@@ -49,6 +49,7 @@ public class AdminCategoryServlet extends HttpServlet {
         ServletUtils.redirect("/Admin/Category", request, response);
     }
 
+
     private void updateCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("CatID"));
         String name = request.getParameter("CatName");

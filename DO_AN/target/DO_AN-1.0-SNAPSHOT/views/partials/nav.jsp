@@ -98,17 +98,92 @@
                            aria-haspopup="true" aria-expanded="false">
                             Hi, <b>${authUser.name}</b>!
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                Profile
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript: $('#frmLogout').submit();">
-                                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                Logout
-                            </a>
-                        </div>
+
+
+
+
+                        <c:choose>
+                            <c:when test="${authUser.permission==0}">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Change Password
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript: $('#frmLogout').submit();">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </c:when>
+                            <c:when test="${authUser.permission==1}">
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Course Manager
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Change Password
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript: $('#frmLogout').submit();">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        Logout
+                                    </a>
+                                </div>
+
+                            </c:when>
+                            <c:otherwise>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/TeacherManager/">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Teacher Magager
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/StudentManager/">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Student Manger
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/Category/">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Category Manager
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/Course/">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Course Manager
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript: $('#frmLogout').submit();">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        Logout
+                                    </a>
+                                </div>
+
+                            </c:otherwise>
+                        </c:choose>
                     </li>
                 </c:when>
                 <c:otherwise>
