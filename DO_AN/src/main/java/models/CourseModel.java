@@ -108,6 +108,14 @@ public class CourseModel {
                     .executeUpdate();
         }
     }
+    public static void deleteFAV(int id) {
+        final String sql = "delete from wishlist where course_id = :id";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
 }
 
 

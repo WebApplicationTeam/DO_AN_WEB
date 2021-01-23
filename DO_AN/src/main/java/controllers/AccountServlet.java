@@ -38,6 +38,9 @@ public class AccountServlet extends HttpServlet {
             case "/EditProfile":
                 updateUser(request, response);
                 break;
+            case "/DeleteFAV":
+                deleteFAVCourse(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
@@ -90,6 +93,12 @@ public class AccountServlet extends HttpServlet {
             request.setAttribute("errorMessage", "Invalid login.");
             ServletUtils.forward("/views/vwAccount/Login.jsp", request, response);
         }
+    }
+    private void deleteFAVCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        int userid = Integer.parseInt(request.getParameter("q"));
+        CourseModel.deleteFAV(id);
+        ServletUtils.redirect("/Account/Profile",userid, request, response);
     }
     private void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
