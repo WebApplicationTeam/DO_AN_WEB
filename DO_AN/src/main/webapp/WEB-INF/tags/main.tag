@@ -26,7 +26,7 @@
 <body>
 
 <jsp:include page="../../views/partials/nav.jsp"/>
-<div>
+<div class="container">
     <jsp:doBody/>
 </div>
 <jsp:include page="../../views/partials/footer.jsp"/>

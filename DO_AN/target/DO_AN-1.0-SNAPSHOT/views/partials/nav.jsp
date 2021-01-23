@@ -52,15 +52,16 @@
                 <a class="nav-link" href="#">Link</a>
             </li> <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">
-                    <c:forEach var="c" items="${category}">
+            <ul class="dropdown-menu" style="border: none; background-color: transparent">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <c:forEach var="c" items="${category}">
                         <a href="${pageContext.request.contextPath}/Course/ByCat?id=${c.cat_id}" class="list-group-item list-group-item-action">
                                 ${c.cat_name}
                         </a>
-                    </c:forEach>
-                </a>
-                    <ul class="submenu dropdown-menu">
+                        </c:forEach>
+                    </a>
+                    <ul class="submenu dropdown-menu mt-3">
                         <li><a class="dropdown-item" href="#"> All... </a></li>
                         <li><a class="dropdown-item" href="#"> WordPress Website </a></li>
                         <li><a class="dropdown-item" href="#"> Website Design </a></li>
