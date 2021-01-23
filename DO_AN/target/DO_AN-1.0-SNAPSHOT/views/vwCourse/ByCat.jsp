@@ -7,9 +7,9 @@
 
 <t:main>
     <jsp:body>
+        <div class="container">
         <div class="card">
         <div class="card-header">
-
         </div>
         <c:choose>
             <c:when test="${course.size() == 0}">
@@ -46,9 +46,9 @@
                         </div>
                     </div>
                 </c:forEach>
-
             </c:otherwise>
         </c:choose>
+        </div>
         </div>
     </jsp:body>
 </t:main>

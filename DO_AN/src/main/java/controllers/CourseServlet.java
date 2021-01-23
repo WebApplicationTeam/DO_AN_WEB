@@ -1,10 +1,10 @@
 package controllers;
 
 import beans.Course;
+import beans.Registers;
 import models.CourseModel;
-import models.UserModel;
+import models.RegisterCourseModel;
 import utils.ServletUtils;
-import beans.User;
 
 
 import javax.servlet.ServletException;
@@ -24,10 +24,26 @@ public class CourseServlet extends HttpServlet {
             case "/Search":
                 ServletUtils.redirect("/Course/Search", request, response);
                 break;
-
+            case "/Register":
+                addCourseRe(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
+        }
+    }
+    private void addCourseRe(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int cIDRe = Integer.parseInt(request.getParameter("id"));
+        int cIDStudent = Integer.parseInt(request.getParameter("q"));
+        Registers cRe=new Registers(cIDRe,cIDStudent);
+        int num=RegisterCourseModel.checkExitCourse(cRe);
+        if(num>0)
+        {
+            ServletUtils.redirect("/Account/Profile",cIDStudent, request, response);
+        }
+        else {
+            RegisterCourseModel.add(cRe);
+            ServletUtils.redirect("/Account/Profile",cIDStudent, request, response);
         }
     }
 
@@ -52,6 +68,16 @@ public class CourseServlet extends HttpServlet {
                 if (c.isPresent()) {
                     request.setAttribute("course", c.get());
                     ServletUtils.forward("/views/vwCourse/Detail.jsp", request, response);
+                } else {
+                    ServletUtils.redirect("/Home", request, response);
+                }
+                break;
+            case "/Content":
+                int conID = Integer.parseInt(request.getParameter("id"));
+                Optional<Course> con = CourseModel.findById(conID);
+                if (con.isPresent()) {
+                    request.setAttribute("course", con.get());
+                    ServletUtils.forward("/views/vwCourse/Content.jsp", request, response);
                 } else {
                     ServletUtils.redirect("/Home", request, response);
                 }
