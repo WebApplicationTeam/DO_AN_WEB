@@ -6,7 +6,7 @@ public class Course {
     int course_id, course_participant, teacher_id, amount_chapter, cat_id, num_cmt;
     String course_name, course_tiny_desc, course_full_desc,learned,course_pic, cat_name, name;
     float rating,price;
-    Date last_update;
+    Date last_update,dateCreated;
     boolean complete;
 
     public Course() {
@@ -32,6 +32,27 @@ public class Course {
         this.complete = complete;
     }
 
+    public Course(int course_id, int course_participant, int teacher_id, int amount_chapter, int cat_id, int num_cmt, String course_name, String course_tiny_desc, String course_full_desc, String learned, String course_pic, String cat_name, String name, float rating, float price, Date last_update, Date dateCreated, boolean complete) {
+        this.course_id = course_id;
+        this.course_participant = course_participant;
+        this.teacher_id = teacher_id;
+        this.amount_chapter = amount_chapter;
+        this.cat_id = cat_id;
+        this.num_cmt = num_cmt;
+        this.course_name = course_name;
+        this.course_tiny_desc = course_tiny_desc;
+        this.course_full_desc = course_full_desc;
+        this.learned = learned;
+        this.course_pic = course_pic;
+        this.cat_name = cat_name;
+        this.name = name;
+        this.rating = rating;
+        this.price = price;
+        this.last_update = last_update;
+        this.dateCreated = dateCreated;
+        this.complete = complete;
+    }
+
     public Course(int course_id, int num_cmt, String course_name, String cat_name, String name, float rating, float price) {
         this.course_id = course_id;
         this.num_cmt = num_cmt;
@@ -40,6 +61,14 @@ public class Course {
         this.name = name;
         this.rating = rating;
         this.price = price;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public int getCourse_id() {
@@ -197,6 +226,7 @@ public class Course {
                 ", rating=" + rating +
                 ", price=" + price +
                 ", last_update=" + last_update +
+                ", dateCreated=" + dateCreated +
                 ", complete=" + complete +
                 '}';
     }

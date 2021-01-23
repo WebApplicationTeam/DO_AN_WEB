@@ -118,9 +118,11 @@
                                 <span class="">Toggleable via the navbar brand.</span>
                             </div>
                         </div>
+                            ${course.course_full_desc}
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="Desk1">
             <div class="bg-dark">
