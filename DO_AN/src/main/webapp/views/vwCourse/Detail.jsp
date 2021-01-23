@@ -23,10 +23,12 @@
                                 <img src="${pageContext.request.contextPath}/public/image/1.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <div style="font-weight: bold"><span>$</span>${course.price}</div>
+
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-lg btn-danger" type="button" style="width: 100%; font-weight: bold">Join now</button>
-                                        <button class="btn  btn-lg btn-outline-success" type="button" style="width: 100%;font-weight: bold">Buy now</button>
+                                        <a class="btn btn-lg btn-danger" type="button" style="width: 100%; font-weight: bold" href="${pageContext.request.contextPath}/Home">Join now</a>
                                     </div>
+
+
                                     <div class="mt-3">
                                         <div style="font-weight: 600;font-size: 20px">This course inclue:</div>
                                         <ul style="font-size: 16px;list-style-type: none">
@@ -34,8 +36,6 @@
                                             <li>B</li>
                                             <li>C</li>
                                             <li>D</li>
-                                            <li>E</li>
-                                            <li>F</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -64,6 +64,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="card mt-3 mb-3 container" style="background-color: transparent;border: none">
                 <div class="row">
                     <div class="card col-md-4" style="border: none;background-color: transparent">

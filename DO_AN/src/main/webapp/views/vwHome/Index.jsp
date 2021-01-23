@@ -94,15 +94,17 @@
         <div class="container">
 
                 <div class="card-deck card_carousel owl-carousel">
-                    <c:forEach var="coursetop10" items="${coursetop10}">
+                    <c:forEach var="c" items="${coursetop10}">
                             <div class="card h-100 card_hover mb-5">
                                 <div class="card-body card_size">
-                                    <h5 class="card-title">${coursetop10.course_name}</h5>
-                                    <p class="card-text">${coursetop10.course_tiny_desc}</p>
-                                    <p class="card-text">${coursetop10.rating}</p>
-                                    <p class="card-text card_price">${coursetop10.price}</p>
+                                    <h5 class="card-title">${c.course_name}</h5>
+                                    <p class="card-text">${c.course_tiny_desc}</p>
+                                    <p class="card-text">${c.rating}</p>
+                                    <p class="card-text card_price">${c.price}</p>
                                     <div class="ui-but">
-                                        <a  href="#" class="btn btn-outline-primary">Join now</a>
+                                        <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                            Detail<i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
                                         <i class="fa fa-heart-o" aria-hidden="true"></i>
                                     </div>
 

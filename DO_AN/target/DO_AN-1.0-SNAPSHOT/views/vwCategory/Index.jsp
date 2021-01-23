@@ -36,7 +36,7 @@
                                     <th scope="row">${c.cat_id} </th>
                                     <td>${c.cat_name}</td>
                                     <td class="text-right">
-                                        <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Admin/Category/Edit?id=${c.cat_id}" role="button">
+                                            <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Admin/Category/Edit?id=${c.cat_id}" role="button">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                         </a>
                                     </td>

@@ -19,7 +19,7 @@ public class CourseModel {
 
 
     public static List<Course> getTop10() {
-        final String sql = "select  course.course_name, course.price, course.rating from course " +
+        final String sql = "select  course.course_id, course.course_name, course.price, course.rating from course " +
                 " order by rating desc limit 9";
         try (Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql).executeAndFetch(Course.class);

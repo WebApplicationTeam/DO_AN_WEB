@@ -1,12 +1,17 @@
 package filters;
 
+import beans.Category;
+import beans.Course;
 import beans.User;
+import models.CategoryModels;
+import models.CourseModel;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebFilter(filterName = "SessionInitFilter")
 public class SessionInitFilter implements Filter {

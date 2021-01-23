@@ -14,7 +14,7 @@
         <c:choose>
             <c:when test="${course.size() == 0}">
                 <div class="card-body">
-                    <p class="card-text">Không có dữ liệu.</p>
+                    <p class="card-text">Don't have any Courses </p>
                 </div>
             </c:when>
             <c:otherwise>

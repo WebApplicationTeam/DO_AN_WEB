@@ -23,9 +23,14 @@ public class UserModel {
         }
     }
 
-
-
-
+    public static List<User> getUserByCourseId(int id) {
+        final String sql = "select * from registercourse where course_id= :id";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetch(User.class);
+        }
+    }
 
     public  static  void deleteTeacher(int id)
     {

@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html; charset=utf-8" %>
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
+
 
 <style>
     @media (min-width: 992px){
@@ -55,19 +57,28 @@
             <ul class="dropdown-menu" style="border: none; background-color: transparent">
                 <li>
                     <a class="dropdown-item" href="#">
-                        <c:forEach var="c" items="${category}">
-                        <a href="${pageContext.request.contextPath}/Course/ByCat?id=${c.cat_id}" class="list-group-item list-group-item-action">
-                                ${c.cat_name}
+                        <c:forEach var="c" items="${catparent}">
+                        <a href="${pageContext.request.contextPath}/Course/ByCat?id=${c.id}" class="list-group-item list-group-item-action">
+                                ${c.name}
                         </a>
                         </c:forEach>
                     </a>
+
                     <ul class="submenu dropdown-menu mt-3">
-                        <li><a class="dropdown-item" href="#"> All... </a></li>
-                        <li><a class="dropdown-item" href="#"> WordPress Website </a></li>
-                        <li><a class="dropdown-item" href="#"> Website Design </a></li>
-                        <li><a class="dropdown-item" href="#"> Open Source </a></li>
-                        <li><a class="dropdown-item" href="#"> Custom CMS </a></li>
+
+                        <c:forEach var="c" items="${catparent}">
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByParentCat?id=${c.id}"> All ${c.name} </a></li>
+                            <c:forEach var="d" items ="${category}">
+                                <c:choose>
+                                    <c:when test="${d.parent_id==c.id}">
+                                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByCat?id=${d.cat_id}"> ${d.cat_name} </a></li>
+                                    </c:when>
+                                </c:choose>
+                            </c:forEach>
+                        </c:forEach>
+
                     </ul>
+
                 </li>
             </ul>
         </li>

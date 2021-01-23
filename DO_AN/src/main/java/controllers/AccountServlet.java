@@ -123,8 +123,12 @@ public class AccountServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("auth", false);
         session.setAttribute("authUser", new User());
-
-        String url = request.getHeader("referer");
+        String url = request.getHeader("referer");;
+        String patch = request.getScheme() + "://" +   // "http" + "://
+                request.getServerName() +       // "myhost"
+                ":" + request.getServerPort(); //port
+        String rqpatch=url.replace(patch,"");
+        /*String url = request.getHeader("referer");*/
         if (url == null) url = "/Home";
         /*ServletUtils.redirect(url, request, response);*/
         ServletUtils.redirect("/Home", request, response);

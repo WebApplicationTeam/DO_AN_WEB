@@ -85,7 +85,7 @@
                                             <td>${c.rating}</td>
                                             <td>${c.price}</td>
                                             <td class="text-right">
-                                                <a class="btn btn-sm btn-outline-primary" href="#" role="button">
+                                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
                                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </a>
                                             </td>

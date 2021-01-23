@@ -1,6 +1,8 @@
 package filters;
 
+import beans.CatParent;
 import beans.Category;
+import models.CatParentModel;
 import models.CategoryModels;
 
 import javax.servlet.*;
@@ -17,6 +19,10 @@ public class LayoutFilter implements Filter {
 
         List<Category> list = CategoryModels.getAll();
         req.setAttribute("category", list);
+
+        List<CatParent> parentList = CatParentModel.getAll();
+        req.setAttribute("catparent",parentList);
+
         chain.doFilter(req, resp);
     }
     public void init(FilterConfig config) throws ServletException {

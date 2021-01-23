@@ -2,7 +2,10 @@ package controllers;
 
 import beans.Course;
 import models.CourseModel;
+import models.UserModel;
 import utils.ServletUtils;
+import beans.User;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
