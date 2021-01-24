@@ -2,7 +2,9 @@ package controllers;
 
 import beans.Course;
 import beans.Registers;
+import beans.feedback;
 import models.CourseModel;
+import models.FeedbackModel;
 import models.RegisterCourseModel;
 import utils.ServletUtils;
 
@@ -77,21 +79,22 @@ public class CourseServlet extends HttpServlet {
             case "/Search":
                 String search = request.getParameter("search") ;
                 final int LIMIT1=6;
-                int curentPages1=1;
-                if(request.getParameter("pages")!=null){
-                    curentPages1=Integer.parseInt(request.getParameter("pages"));
+                int currentPage1=1;
+                if(request.getParameter("page")!=null){
+                    currentPage1=Integer.parseInt(request.getParameter("page"));
                 }
-                int offset1=(curentPages1-1)*LIMIT1;
+                int offset1=(currentPage1-1)*LIMIT1;
+
                 int total1=CourseModel.countgetcourseByString(search);
                 int nPages1=total1/LIMIT1;
-                if (total1%LIMIT1>0)
+                if(total1%LIMIT1>0)
                     nPages1++;
                 int[] pages1=new int[nPages1];
                 for (int i=0;i<nPages1;i++)
                 {
-                        pages1[i]=i+1;
+                    pages1[i]=i+1;
                 }
-                request.setAttribute("pages1",pages1);
+                request.setAttribute("pages", pages1);
                 List<Course> listSearch = CourseModel.getcourseByString(search,LIMIT1,offset1);
                 request.setAttribute("courseSearch", listSearch);
                 ServletUtils.forward("/views/vwCourse/Search.jsp", request, response);
@@ -99,8 +102,10 @@ public class CourseServlet extends HttpServlet {
             case "/Detail":
                 int cID = Integer.parseInt(request.getParameter("id"));
                 Optional<Course> c = CourseModel.findById(cID);
+                List<feedback> d = FeedbackModel.getfeedbackByCourseId(cID);
                 if (c.isPresent()) {
                     request.setAttribute("course", c.get());
+                    request.setAttribute("feedback",d);
                     ServletUtils.forward("/views/vwCourse/Detail.jsp", request, response);
                 } else {
                     ServletUtils.redirect("/Home", request, response);

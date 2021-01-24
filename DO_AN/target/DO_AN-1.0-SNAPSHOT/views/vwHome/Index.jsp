@@ -124,47 +124,27 @@
             <div class="texth3">
                 <h3>Student are Viewing</h3>
             </div>
-            <div class="card-deck">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="card-deck card_carousel owl-carousel">
+
+                <c:forEach var="c" items="${coursetop10}">
+
+                    <div class="card h-100 card_hover mb-5">
+                        <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
+                        <div class="card-body card_size">
+                            <h5 class="card-title">${c.course_name}</h5>
+                            <p class="card-text">${c.course_tiny_desc}</p>
+                            <p class="card-text">${c.rating}</p>
+                            <p class="card-text card_price">${c.price}</p>
+                            <div class="ui-but">
+                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                    Detail<i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
         </div>
         <div class="center">
@@ -174,108 +154,51 @@
         </div>
         <div class="container">
             <h3 class="texth3">Top Categories</h3>
-            <div class="card-deck">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+            <div class="card-deck card_carousel owl-carousel">
 
+                <c:forEach var="c" items="${coursetop10}">
+
+                    <div class="card h-100 card_hover mb-5">
+                        <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
+                        <div class="card-body card_size">
+                            <h5 class="card-title">${c.course_name}</h5>
+                            <p class="card-text">${c.course_tiny_desc}</p>
+                            <p class="card-text">${c.rating}</p>
+                            <p class="card-text card_price">${c.price}</p>
+                            <div class="ui-but">
+                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                    Detail<i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
-            <div class="card-deck">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+            <div class="card-deck card_carousel owl-carousel">
 
+                <c:forEach var="c" items="${coursetop10}">
+
+                    <div class="card h-100 card_hover mb-5">
+                        <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
+                        <div class="card-body card_size">
+                            <h5 class="card-title">${c.course_name}</h5>
+                            <p class="card-text">${c.course_tiny_desc}</p>
+                            <p class="card-text">${c.rating}</p>
+                            <p class="card-text card_price">${c.price}</p>
+                            <div class="ui-but">
+                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                    Detail<i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
-            <h3 class="texth3">Featured topics by category</h3>
-            <div class="row align-items-center">
-                <div class="col">
-                    <p class="txt4">Deployment</p>
-                    <a class="txt4" href="#">Python</a>
-                    <p>23,629,939 students</p>
-                    <a class="txt4" href="#">Web Development</a>
-                    <p>8,061,989 students</p>
-                    <a class="txt4" href="#">Machine Learning</a>
-                    <p>4,597,425 students</p>
-                </div>
-                <div class="col">
-                    <p class="txt4">Business</p>
-                    <a class="txt4" href="#">Financial Analysis </a>
-                    <p>913,881 students</p>
-                    <a class="txt4" href="#">SQL</a>
-                    <p>3,520,304 students</p>
-                    <a class="txt4" href="#">PMP</a>
-                    <p>1,243,449 students</p>
 
-                </div>
-                <div class="col">
-                    <p class="txt4">IT and Software</p>
-                    <a class="txt4" href="#">AWS Certification </a>
-                    <p>3,582,843 students</p>
-                    <a class="txt4" href="#">Ethical Hacking</a>
-                    <p>7,685,271 students</p>
-                    <a class="txt4" href="#">Cyber Security</a>
-                    <p>2,615,660 students</p>
-                </div>
-                <div class="col">
-                    <p class="txt4">Design</p>
-                    <a class="txt4" href="#">Photoshop</a>
-                    <p>8,285,580 students</p>
-                    <a class="txt4" href="#">Graphic Design</a>
-                    <p>2,387,768 students</p>
-                    <a class="txt4" href="#">Drawing</a>
-                    <p>2,055,275 students</p>
-                </div>
-            </div>
             <button type="button" class="btn btn-secondary">Explore more</button>
         </div>
         <div class="center">

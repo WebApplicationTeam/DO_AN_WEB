@@ -129,7 +129,17 @@
                         </div>
                     </div>
                 </div>
+                <table>
+                <c:forEach var="d" items="${feedback}">
 
+                    <tr>
+                        <td scope="row">Người dùng ẩn danh</td>
+                        <td>${d.comment}</td>
+                        <td>${d.Rate}</td>
+
+                    </tr>
+                </c:forEach>
+                </table>
             </div>
         </form>
         <div class="Desk1">

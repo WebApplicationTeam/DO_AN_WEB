@@ -60,7 +60,7 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <c:forEach var="c" items="${pages1}">
+                <c:forEach var="c" items="${pages}">
                     <li class="page-item">
                         <a class="page-link" href="?search=${search}&page=${c}">${c}</a>
                     </li>
