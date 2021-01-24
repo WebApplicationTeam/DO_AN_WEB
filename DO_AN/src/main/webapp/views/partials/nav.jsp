@@ -59,11 +59,9 @@
             <ul class="dropdown-menu" style="border: none; background-color: transparent">
                 <c:forEach var="c" items="${catparent}">
                 <li>
-
                         <a href="${pageContext.request.contextPath}/Course/ByParentCat?id=${c.id}" class="list-group-item list-group-item-action">
                                 ${c.name}
                         </a>
-
                     <ul class="submenu dropdown-menu mt-3">
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByParentCat?id=${c.id}"> All ${c.name} </a></li>
                         <c:forEach var="d" items ="${category}">
@@ -77,24 +75,6 @@
                 </li>
                 </c:forEach>
             </ul>
-        <%--
-
-                    <ul class="submenu dropdown-menu mt-3">
-
-                        <c:forEach var="c" items="${catparent}">
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByParentCat?id=${c.id}"> All ${c.name} </a></li>
-                            <c:forEach var="d" items ="${category}">
-                                <c:choose>
-                                    <c:when test="${d.parent_id==c.id}">
-                                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByCat?id=${d.cat_id}"> ${d.cat_name} </a></li>
-                                    </c:when>
-                                </c:choose>
-                            </c:forEach>
-                        </c:forEach>
-
-                    </ul>--%>
-
-
 
         </li>
 
@@ -125,10 +105,6 @@
                            aria-haspopup="true" aria-expanded="false">
                             Hi, <b>${authUser.name}</b>!
                         </a>
-
-
-
-
                         <c:choose>
                             <c:when test="${authUser.permission==0}">
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">

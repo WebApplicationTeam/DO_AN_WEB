@@ -97,34 +97,31 @@
                             <div>
                                 <div style="font-size:20px ;font-weight: bold">Course content</div>
                             </div>
-                            <div class="navbar navbar-dark bg-light">
-                                <div class="container-fluid">
-                                    <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                                    </button>
-                                    <div>Content</div>
+                            <c:forEach var="c" items="${content}">
+                                <c:forEach var="d" items="${content}">
+                                <div class="navbar navbar-dark bg-light">
+                                    <div class="container-fluid">
+                                        <button class="navbar-toggler text-dark" type="submit" formaction="${pageContext.request.contextPath}/Course/Content?id=${c.course_id}&chapter=${d.chapter}" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                                        </button>
+                                        <div>${content.chapter_name}</div>
+                                    </div>
                                 </div>
-                            </div>
+                                </c:forEach>
+                            </c:forEach>
+
                             <div class="collapse" id="navbarToggleExternalContent">
                                 <div class="bg-light p-4">
-                                    <h5 class="h4">Collapsed content</h5>
-                                    <span class="">Toggleable via the navbar brand.</span>
+                                    <c:forEach var="d"  items="session">
+                                        <c:choose>
+                                            <c:when test="${content.chapter}">
+                                                <a href="${session.link}">${session.name}</a>
+                                            </c:when>
+                                        </c:choose>
+                                    </c:forEach>
                                 </div>
                             </div>
-                            <div class="navbar navbar-dark bg-light">
-                                <div class="container-fluid">
-                                    <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                                    </button>
-                                    <div>Content</div>
-                                </div>
-                            </div>
-                            <div class="collapse" id="navbarToggleExternalContent1">
-                                <div class="bg-light p-4">
-                                    <h5 class="h4">Collapsed content</h5>
-                                    <span class="">Toggleable via the navbar brand.</span>
-                                </div>
-                            </div>
+                            <h3>Description</h3>
                                 ${course.course_full_desc}
                         </div>
                     </div>
@@ -149,7 +146,7 @@
                         <img src="${pageContext.request.contextPath}/public/image/1.png" class="card-img-top" alt="...">
                         <h2 class="card-title text-white" style="font-weight: bold">${course.course_name}</h2>
                         <p class="card-text text-white">${course.course_tiny_desc}</p>
-                        <p class="card-text text-white">${course.rating}</p>
+                        <div class="Stars" style="--rating: ${course.rating};" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${course.rating}</span></div>
                         <p class="card-text text-white">Created by &nbsp;<a>${course.teacher_id}</a></p>
                         <p class="card-text text-white">Last updated&nbsp;<span>${course.last_update}</span></p>
                         <div style="font-weight: bold"><span>$</span>${course.price}</div>

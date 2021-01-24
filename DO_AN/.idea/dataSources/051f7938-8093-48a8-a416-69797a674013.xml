@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="udemy@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.20">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.19">
     <root id="1">
       <ServerVersion>10.4.17</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1033,7 +1033,7 @@
     </collation>
     <user id="330" parent="1" name="pma">
       <Host>localhost</Host>
-      <ObjectGrants>SELECT,INSERT,UPDATE,DELETE|phpmyadmin
+      <ObjectGrants>SELECT,INSERT,UPDATE,DELETE|phpmyadmin:null
 </ObjectGrants>
     </user>
     <user id="331" parent="1" name="root">

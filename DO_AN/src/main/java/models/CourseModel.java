@@ -1,6 +1,8 @@
 package models;
 
+import beans.Content;
 import beans.Course;
+import beans.User;
 import org.sql2o.Connection;
 import utils.DbUtils;
 
@@ -54,6 +56,19 @@ public class CourseModel {
 
         }
     }
+    public static List<Course> getcourseByCatparent(int id) {
+        final String sql = "select course.course_id, course.course_name, course.rating,  cat_name, course.price\n" +
+                "from(course,category,catparent)" +
+                "where catparent.id=category.parent_id and course.cat_id=category.cat_id and catparent.id=:catparent_id\n";
+
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("catparent_id", id)
+                    .executeAndFetch(Course.class);
+
+        }
+    }
+
 
     public static List<Course> getFavoriteCourseByUserID(int id) {
         final String sql = "select course.course_id, teacher_id, amount_chapter, complete, cat_id,course_name, course_tiny_desc, course_full_desc,learned,rating,price,last_update " +
@@ -147,6 +162,23 @@ public class CourseModel {
         try (Connection con = DbUtils.getConnection()) {
             con.createQuery(sql)
                     .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
+
+    public static void add(Course course) {
+        final String sql = "INSERT INTO course ( course_name, course_tiny_desc, course_full_desc, rating,teacher_id, last_update,amount_chapter,complete,cat_id,price,dateCreate) VALUES (:course_name, :course_tiny_desc, :course_full_desc, 0,:teacher_id, :last_update,:amount_chapter,0,:cat_id,:price,:dateCreate)";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("course_name", course.getCourse_name())
+                    .addParameter("course_tiny_desc", course.getCourse_tiny_desc())
+                    .addParameter("course_full_desc", course.getCourse_full_desc())
+                    .addParameter("teacher_id", course.getTeacher_id())
+                    .addParameter("last_update",course.getLast_update())
+                    .addParameter("amount_chapter",course.getAmount_chapter())
+                    .addParameter("cat_id",course.getCat_id())
+                    .addParameter("price",course.getPrice())
+                    .addParameter("dateCreate", course.getDateCreated())
                     .executeUpdate();
         }
     }

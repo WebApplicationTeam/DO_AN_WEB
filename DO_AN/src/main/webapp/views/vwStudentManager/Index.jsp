@@ -6,7 +6,7 @@
 
 <t:main>
 <jsp:attribute name="css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/body.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/Body.css">
 </jsp:attribute>
     <jsp:body>
         <form method="post">

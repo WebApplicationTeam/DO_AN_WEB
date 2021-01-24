@@ -5,14 +5,18 @@
 <jsp:useBean id="course" scope="request" type="java.util.List<beans.Course>"/>
 <t:main>
 <jsp:attribute name="css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/body.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/Body.css">
 </jsp:attribute>
     <jsp:body>
         <form method="post">
             <div class="container">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between">
                         <h4>Courses</h4>
+                        <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/Admin/Course/AddCourse" role="button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Add Course
+                        </a>
                     </div>
                     <c:choose>
                         <c:when test="${course.size() == 0}">

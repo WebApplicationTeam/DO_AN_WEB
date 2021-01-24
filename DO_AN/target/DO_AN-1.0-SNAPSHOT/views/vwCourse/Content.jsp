@@ -62,32 +62,28 @@
                     <div>
                         <div style="font-size:20px ;font-weight: bold">Course content</div>
                     </div>
-                    <div class="navbar navbar-dark bg-light">
-                        <div class="container-fluid">
-                            <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                            </button>
-                            <div>Content</div>
-                        </div>
-                    </div>
-                    <div class="collapse" id="navbarToggleExternalContent3">
+                    <c:forEach var="c" items="${content}">
+                        <c:forEach var="d" items="${content}">
+                            <div class="navbar navbar-dark bg-light">
+                                <div class="container-fluid">
+                                    <button class="navbar-toggler text-dark" type="submit" formaction="${pageContext.request.contextPath}/Course/Content?id=${c.course_id}&chapter=${d.chapter}" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                                    </button>
+                                    <div>${content.chapter_name}</div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </c:forEach>
+
+                    <div class="collapse" id="navbarToggleExternalContent">
                         <div class="bg-light p-4">
-                            <h5 class="h4">Collapsed content</h5>
-                            <span class="">Toggleable via the navbar brand.</span>
-                        </div>
-                    </div>
-                    <div class="navbar navbar-dark bg-light">
-                        <div class="container-fluid">
-                            <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent4" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                            </button>
-                            <div>Content</div>
-                        </div>
-                    </div>
-                    <div class="collapse" id="navbarToggleExternalContent4">
-                        <div class="bg-light p-4">
-                            <h5 class="h4">Collapsed content</h5>
-                            <span class="">Toggleable via the navbar brand.</span>
+                            <c:forEach var="d"  items="session">
+                                <c:choose>
+                                    <c:when test="${content.chapter}">
+                                        <a href="${session.link}">${session.name}</a>
+                                    </c:when>
+                                </c:choose>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>

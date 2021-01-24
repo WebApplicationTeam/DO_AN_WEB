@@ -65,13 +65,7 @@
     <configuration name="Tomcat 9.0.401" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.401" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/DoAn/Home" />
       <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="unnamed">
-          <settings>
-            <option name="CONTEXT_PATH" value="/DoAn" />
-          </settings>
-        </artifact>
-      </deployment>
+      <deployment />
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="83c36327-8390-4eaa-b949-93780d8cabc8" />
       </server-settings>
@@ -244,6 +238,8 @@
       <workItem from="1610891074226" duration="59000" />
       <workItem from="1611488550963" duration="487000" />
       <workItem from="1611489147867" duration="915000" />
+      <workItem from="1611490689487" duration="209000" />
+      <workItem from="1611490912440" duration="60000" />
     </task>
     <servers />
   </component>
@@ -260,5 +256,48 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="399" key="#BuildArtifactsBeforeRunChooser" timestamp="1611490835874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="399" key="#BuildArtifactsBeforeRunChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1611490835874" />
+    <state x="738" y="409" key="#Tomcat_Server" timestamp="1611490726185">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="738" y="409" key="#Tomcat_Server/0.0.1920.1040@0.0.1920.1040" timestamp="1611490726185" />
+    <state x="414" y="111" width="1092" height="929" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611490926885">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="111" width="1092" height="929" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611490926885" />
+    <state x="687" y="233" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1611490885463">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="233" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1611490885463" />
+    <state x="739" y="272" key="FileChooserDialogImpl" timestamp="1611490882627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="272" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1611490882627" />
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom" timestamp="1611490972310">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611490972310" />
+    <state width="1293" height="282" key="GridCell.Tab.0.center" timestamp="1611490972310">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611490972310" />
+    <state width="1293" height="282" key="GridCell.Tab.0.left" timestamp="1611490972310">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611490972310" />
+    <state width="1293" height="282" key="GridCell.Tab.0.right" timestamp="1611490972310">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611490972310" />
+    <state x="530" y="164" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1611490797988">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="530" y="164" key="com.intellij.javaee.view.ServerArtifactsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611490797988" />
   </component>
 </project>

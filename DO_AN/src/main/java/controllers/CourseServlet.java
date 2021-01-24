@@ -1,8 +1,7 @@
 package controllers;
 
-import beans.Course;
-import beans.Registers;
-import beans.feedback;
+import beans.*;
+import models.CategoryModels;
 import models.CourseModel;
 import models.FeedbackModel;
 import models.RegisterCourseModel;
@@ -25,9 +24,6 @@ public class CourseServlet extends HttpServlet {
         switch (path) {
             case "/Search":
                 ServletUtils.redirect("/Course/Search", request, response);
-                break;
-            case "/Register":
-                addCourseRe(request,response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
@@ -76,6 +72,13 @@ public class CourseServlet extends HttpServlet {
                 request.setAttribute("course", list);
                 ServletUtils.forward("/views/vwCourse/ByCat.jsp", request, response);
                 break;
+            case "/ByParentCat":
+                int catparentId=Integer.parseInt(request.getParameter("id"));
+                request.setAttribute("catparentId",catparentId);
+                List<Course>listParent=CourseModel.getcourseByCatparent(catparentId);
+                request.setAttribute("parentCoure",listParent);
+                ServletUtils.forward("/views/vwCourse/ByCatParent.jsp", request, response);
+                break;
             case "/Search":
                 String search = request.getParameter("search") ;
                 final int LIMIT1=6;
@@ -114,12 +117,11 @@ public class CourseServlet extends HttpServlet {
             case "/Content":
                 int conID = Integer.parseInt(request.getParameter("id"));
                 Optional<Course> con = CourseModel.findById(conID);
-                if (con.isPresent()) {
-                    request.setAttribute("course", con.get());
-                    ServletUtils.forward("/views/vwCourse/Content.jsp", request, response);
-                } else {
-                    ServletUtils.redirect("/Home", request, response);
-                }
+                request.setAttribute("course", con.get());
+                ServletUtils.forward("/views/vwCourse/Content.jsp", request, response);
+                break;
+            case "/Add":
+                ServletUtils.forward("/views/vwCourse/AddCourse.jsp", request, response);
                 break;
             default:
                 ServletUtils.forward("/views/404.jsp", request, response);

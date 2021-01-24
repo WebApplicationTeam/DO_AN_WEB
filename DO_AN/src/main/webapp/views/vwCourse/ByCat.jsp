@@ -7,7 +7,7 @@
 
 <t:main>
     <jsp:attribute name="css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/ByCat.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/ByCats.css">
     </jsp:attribute>
     <jsp:body>
         <div class="container">

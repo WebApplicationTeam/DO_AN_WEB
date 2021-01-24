@@ -5,12 +5,10 @@
 
 <t:main>
 <jsp:attribute name="css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/body.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/Body.css">
     <link rel="stylesheet" href="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/owl.carousel.min.css">
 </jsp:attribute>
     <jsp:attribute name="js">
-
-
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/owl.carousel.min.js"></script>
         <script>
@@ -87,7 +85,6 @@
 
                 </div>
             </c:forEach>
-
         </div>
 
 
@@ -96,21 +93,19 @@
                 <div class="card-deck card_carousel owl-carousel">
 
                     <c:forEach var="c" items="${coursetop10}">
-
                             <div class="card h-100 card_hover mb-5">
                                 <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
                                 <div class="card-body card_size">
                                     <h5 class="card-title">${c.course_name}</h5>
                                     <p class="card-text">${c.course_tiny_desc}</p>
-                                    <p class="card-text">${c.rating}</p>
-                                    <p class="card-text card_price">${c.price}</p>
-                                    <div class="ui-but">
-                                        <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                    <div class="Stars" style="--rating: ${c.rating};display:inline-block" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
+                                    <p class="card-text card_price" style="font-weight: bold">$${c.price}</p>
+                                    <div class="ui-but" style="color: white">
+                                        <a class="btn btn-sm btn btn-warning" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
                                             Detail<i class="fa fa-eye" aria-hidden="true"></i>
                                         </a>
                                         <i class="fa fa-heart-o" aria-hidden="true"></i>
                                     </div>
-
                                 </div>
                             </div>
                     </c:forEach>
@@ -133,7 +128,7 @@
                         <div class="card-body card_size">
                             <h5 class="card-title">${c.course_name}</h5>
                             <p class="card-text">${c.course_tiny_desc}</p>
-                            <p class="card-text">${c.rating}</p>
+                            <div class="Stars" style="--rating: ${c.rating};display:inline-block" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
                             <p class="card-text card_price">${c.price}</p>
                             <div class="ui-but">
                                 <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
@@ -163,7 +158,7 @@
                         <div class="card-body card_size">
                             <h5 class="card-title">${c.course_name}</h5>
                             <p class="card-text">${c.course_tiny_desc}</p>
-                            <p class="card-text">${c.rating}</p>
+                            <div class="Stars" style="--rating: ${c.rating};display:inline-block" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
                             <p class="card-text card_price">${c.price}</p>
                             <div class="ui-but">
                                 <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
@@ -185,7 +180,7 @@
                         <div class="card-body card_size">
                             <h5 class="card-title">${c.course_name}</h5>
                             <p class="card-text">${c.course_tiny_desc}</p>
-                            <p class="card-text">${c.rating}</p>
+                            <div class="Stars" style="--rating: ${c.rating};display:inline-block" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
                             <p class="card-text card_price">${c.price}</p>
                             <div class="ui-but">
                                 <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">

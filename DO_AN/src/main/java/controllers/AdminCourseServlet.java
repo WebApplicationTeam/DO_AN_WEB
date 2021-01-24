@@ -1,7 +1,11 @@
 package controllers;
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.Category;
 import beans.Course;
+import beans.User;
 import models.CategoryModels;
 import models.CourseModel;
+import models.UserModel;
 import utils.ServletUtils;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 @WebServlet(name = "AdminProductServlet", urlPatterns = "/Admin/Course/*")
 public class AdminCourseServlet extends HttpServlet {

@@ -58,7 +58,6 @@ public class AccountServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         String username = request.getParameter("username");
         String name = request.getParameter("name");
         String email = request.getParameter("email");
