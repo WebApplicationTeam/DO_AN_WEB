@@ -6,6 +6,9 @@
 
 
 <t:main>
+    <jsp:attribute name="css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Templates/ByCat.css">
+    </jsp:attribute>
     <jsp:body>
         <div class="container">
         <div class="card">
@@ -22,19 +25,21 @@
                 <div class="row">
                 <c:forEach var="c" items="${course}">
                     <div class="col-sm-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6 class="card-title">${c.course_name}</h6>
+                        <div class="card h-100 card_box">
+                            <div class="card-body card_size">
+                                <h4 class="card-title">${c.course_name}</h4>
                                 <h5 class="card-title text-danger">
                                     <fmt:formatNumber value="${c.price}" type="number"/>
                                 </h5>
                                 <p class="card-text">${c.name}</p>
                                 <p class="card-text">${c.rating} &nbsp; ${c.num_cmt}</p>
                                 <p class="card-text">${c.cat_name}</p>
-                                <p class="card-text">${c.price}</p>
+                                <p class="card-text">${c.price}$</p>
                             </div>
                             <div class="card-footer">
-                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                <a class="btn btn-sm btn-outline-primary"
+                                   href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}"
+                                   role="button">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                     Details
                                 </a>
@@ -49,6 +54,29 @@
             </c:otherwise>
         </c:choose>
         </div>
+
         </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <c:forEach var="c" items="${pages}">
+                    <li class="page-item">
+                        <a class="page-link" href="?id=${catID}&page=${c}">${c}</a>
+                    </li>
+                </c:forEach>
+
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </jsp:body>
 </t:main>

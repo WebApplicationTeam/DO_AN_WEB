@@ -52,7 +52,25 @@ public class CourseServlet extends HttpServlet {
         switch (path) {
             case "/ByCat":
                 int catID = Integer.parseInt(request.getParameter("id"));
-                List<Course> list = CourseModel.getcourseByCat(catID);
+                request.setAttribute("catID",catID);
+                final int LIMIT=6;
+                int currentPage=1;
+                if(request.getParameter("page")!=null){
+                    currentPage=Integer.parseInt(request.getParameter("page"));
+                }
+                int offset=(currentPage-1)*LIMIT;
+
+                int total=CourseModel.countcourseByCat(catID);
+                int nPages=total/LIMIT;
+                if(total%LIMIT>0)
+                    nPages++;
+                int[] pages=new int[nPages];
+                for (int i=0;i<nPages;i++)
+                {
+                    pages[i]=i+1;
+                }
+                request.setAttribute("pages", pages);
+                List<Course> list = CourseModel.getcourseByCat(catID,LIMIT,offset);
                 request.setAttribute("course", list);
                 ServletUtils.forward("/views/vwCourse/ByCat.jsp", request, response);
                 break;

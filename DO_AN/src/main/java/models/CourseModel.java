@@ -27,7 +27,9 @@ public class CourseModel {
     }
 
     public static List<Course> getCourseByUserID(int id) {
-        final String sql = "select course.course_id, course_participant, teacher_id, amount_chapter, complete, cat_id,course_name, course_tiny_desc, course_full_desc,learned,rating,price,last_update FROM registercourse, course WHERE registercourse.course_id=course.course_id AND student_id = :user_id";
+        final String sql = "select course.course_id, course_participant, teacher_id, amount_chapter, complete, cat_id,course_name, course_tiny_desc, course_full_desc,learned,rating,price,last_update " +
+                "FROM registercourse, course " +
+                "WHERE registercourse.course_id=course.course_id AND student_id = :user_id";
         try (Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql)
                     .addParameter("user_id", id)
@@ -35,30 +37,48 @@ public class CourseModel {
 
         }
     }
-    public static List<Course> getFavoriteCourseByUserID(int id) {
-        final String sql = "select course.course_id, teacher_id, amount_chapter, complete, cat_id,course_name, course_tiny_desc, course_full_desc,learned,rating,price,last_update FROM wishlist, course WHERE wishlist.course_id=course.course_id AND student_id = :user_id";
-        try (Connection con = DbUtils.getConnection()) {
-            return con.createQuery(sql)
-                    .addParameter("user_id", id)
-                    .executeAndFetch(Course.class);
-
-        }
-    }
-    public static List<Course> getcourseByCat(int id) {
+    public static List<Course> getcourseByCat(int id, int limit, int offset) {
         final String sql = "select course.course_id, course.course_name, users.`name`, course.rating,  cat_name, count(feedback.`comment`) as num_cmt, course.price\n" +
                 "from ((course, category) left join feedback on course.course_id= feedback.course_id) left join  users on course.teacher_id= users.id\n" +
-                "where course.cat_id= category.cat_id and category.cat_id= :cat_id\n" +
-                "group by course.course_id ";
+                "where course.cat_id= category.cat_id and category.cat_id=:cat_id\n" +
+                "group by course.course_id \n" +
+                "limit :limit offset :offset \n";
 
 
         try (Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql)
                     .addParameter("cat_id", id)
+                    .addParameter("limit", limit)
+                    .addParameter("offset", offset)
                     .executeAndFetch(Course.class);
 
         }
     }
 
+    public static List<Course> getFavoriteCourseByUserID(int id) {
+        final String sql = "select course.course_id, teacher_id, amount_chapter, complete, cat_id,course_name, course_tiny_desc, course_full_desc,learned,rating,price,last_update " +
+                "FROM wishlist, course WHERE wishlist.course_id=course.course_id AND student_id = :user_id";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("user_id", id)
+                    .executeAndFetch(Course.class);
+
+        }
+    }
+
+
+    public static int countcourseByCat(int id) {
+        final String sql = "select count(*)\n" +
+                "from ((course, category) left join feedback on course.course_id= feedback.course_id) left join  users on course.teacher_id= users.id\n" +
+                "where course.cat_id= category.cat_id and category.cat_id=:cat_id";
+
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("cat_id", id)
+                    .executeScalar(Integer.class);
+
+        }
+    }
     public static Optional<Course> findById(int id) {
         final String sql = "select * from course where course_id= :course_id";
         try (Connection con = DbUtils.getConnection()) {

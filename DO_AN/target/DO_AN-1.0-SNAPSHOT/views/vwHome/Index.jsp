@@ -94,8 +94,10 @@
         <div class="container">
 
                 <div class="card-deck card_carousel owl-carousel">
-                    <c:forEach var="c" items="${coursetop10}">
+
+                    <c:forEach var="coursetop10" items="${coursetop10}">
                             <div class="card h-100 card_hover mb-5">
+
                                 <div class="card-body card_size">
                                     <h5 class="card-title">${c.course_name}</h5>
                                     <p class="card-text">${c.course_tiny_desc}</p>

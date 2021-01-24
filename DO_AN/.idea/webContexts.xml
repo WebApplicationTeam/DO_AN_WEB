@@ -7,6 +7,8 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/partials/nav.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/partials" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwAccount/Profile.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwAccount" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwAccount/Register.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwAccount" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwCourse/ByCat.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwCourse" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwHome/Index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwHome" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwTeacherManager/Index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwTeacherManager" />
       </map>
     </option>
