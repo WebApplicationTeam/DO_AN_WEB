@@ -22,7 +22,7 @@ public class CourseModel {
 
     public static List<Course> getTop10() {
         final String sql = "select  course.course_id, course.course_name, course.price, course.rating from course " +
-                " order by rating desc limit 9";
+                " order by rating desc limit 10";
         try (Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql).executeAndFetch(Course.class);
         }
@@ -180,6 +180,27 @@ public class CourseModel {
                     .addParameter("price",course.getPrice())
                     .addParameter("dateCreate", course.getDateCreated())
                     .executeUpdate();
+        }
+    }
+
+
+
+    public static List<Course> getNewWeekCourse(){
+        final String sql = "select course_id, course_name, course.price, course.rating from course where datediff(now(), dateCreated) <=14\n" +
+                "limit 10";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql).executeAndFetch(Course.class);
+        }
+    }
+
+
+
+    public static  List<Course> getTopPart(){
+        final String sql ="select course_id, course_name, course.price, course.rating from course\n" +
+                "order by course_participant desc\n" +
+                "limit 10";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql).executeAndFetch(Course.class);
         }
     }
 }

@@ -71,6 +71,19 @@ public class CategoryModels {
                     .executeUpdate();
         }
     }
+
+    public static List<Category> getTopCat(){
+        final String sql ="select  n.cat_id, n.cat_name\n" +
+                "from (select category.cat_id, course.course_id, category.cat_name\n" +
+                "from course right join category on course.cat_id= category.cat_id) as n, registercourse\n" +
+                "where registercourse.course_id= n.course_id\n" +
+                "group by n.cat_id\n" +
+                "order by count(student_id) desc\n" +
+                "limit 3";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql).executeAndFetch(Category.class);
+        }
+    }
 }
 
 

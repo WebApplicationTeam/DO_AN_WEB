@@ -32,6 +32,13 @@ public class HomeServlet extends HttpServlet {
                 request.setAttribute("category", list);
                 List<Course> listcourse = CourseModel.getTop10();
                 request.setAttribute("coursetop10", listcourse);
+                List<Course> listnew = CourseModel.getNewWeekCourse();
+                request.setAttribute("newweek", listnew);
+                List<Course> listtoppart = CourseModel.getTopPart();
+                request.setAttribute("toppart", listtoppart);
+                List<Category> listTopCat = CategoryModels.getTopCat();
+                request.setAttribute("topcat", listTopCat);
+
 
                 ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
                 break;

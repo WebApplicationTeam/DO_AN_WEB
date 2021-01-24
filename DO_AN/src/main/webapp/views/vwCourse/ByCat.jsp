@@ -34,7 +34,8 @@
                                     <fmt:formatNumber value="${c.price}" type="number"/>
                                 </h5>
                                 <p class="card-text">${c.name}</p>
-                                <p class="card-text">${c.rating} &nbsp; ${c.num_cmt}</p>
+                                <div class="Stars" style="--rating: ${c.rating};" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
+                                <p> &nbsp; ${c.num_cmt}</p>
                                 <p class="card-text">${c.cat_name}</p>
                                 <p class="card-text">${c.price}$</p>
                             </div>
