@@ -75,8 +75,24 @@ public class CourseServlet extends HttpServlet {
                 ServletUtils.forward("/views/vwCourse/ByCat.jsp", request, response);
                 break;
             case "/Search":
-                String search = request.getParameter("search")  ;
-                List<Course> listSearch = CourseModel.getcourseByString(search);
+                String search = request.getParameter("search") ;
+                final int LIMIT1=6;
+                int curentPages1=1;
+                if(request.getParameter("pages")!=null){
+                    curentPages1=Integer.parseInt(request.getParameter("pages"));
+                }
+                int offset1=(curentPages1-1)*LIMIT1;
+                int total1=CourseModel.countgetcourseByString(search);
+                int nPages1=total1/LIMIT1;
+                if (total1%LIMIT1>0)
+                    nPages1++;
+                int[] pages1=new int[nPages1];
+                for (int i=0;i<nPages1;i++)
+                {
+                        pages1[i]=i+1;
+                }
+                request.setAttribute("pages1",pages1);
+                List<Course> listSearch = CourseModel.getcourseByString(search,LIMIT1,offset1);
                 request.setAttribute("courseSearch", listSearch);
                 ServletUtils.forward("/views/vwCourse/Search.jsp", request, response);
                 break;
