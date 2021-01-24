@@ -54,15 +54,30 @@
                 <a class="nav-link" href="#">Link</a>
             </li> <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
+
+
             <ul class="dropdown-menu" style="border: none; background-color: transparent">
+                <c:forEach var="c" items="${catparent}">
                 <li>
-                    <a class="dropdown-item" href="#">
-                        <c:forEach var="c" items="${catparent}">
-                        <a href="${pageContext.request.contextPath}/Course/ByCat?id=${c.id}" class="list-group-item list-group-item-action">
+
+                        <a href="${pageContext.request.contextPath}/Course/ByParentCat?id=${c.id}" class="list-group-item list-group-item-action">
                                 ${c.name}
                         </a>
+
+                    <ul class="submenu dropdown-menu mt-3">
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByParentCat?id=${c.id}"> All ${c.name} </a></li>
+                        <c:forEach var="d" items ="${category}">
+                            <c:choose>
+                                <c:when test="${d.parent_id==c.id}">
+                                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByCat?id=${d.cat_id}"> ${d.cat_name} </a></li>
+                                </c:when>
+                            </c:choose>
                         </c:forEach>
-                    </a>
+                    </ul>
+                </li>
+                </c:forEach>
+            </ul>
+        <%--
 
                     <ul class="submenu dropdown-menu mt-3">
 
@@ -77,10 +92,10 @@
                             </c:forEach>
                         </c:forEach>
 
-                    </ul>
+                    </ul>--%>
 
-                </li>
-            </ul>
+
+
         </li>
 
             <li>
