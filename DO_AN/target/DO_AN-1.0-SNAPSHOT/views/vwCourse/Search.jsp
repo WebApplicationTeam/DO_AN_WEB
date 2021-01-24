@@ -7,6 +7,7 @@
 
 <t:main>
     <jsp:body>
+       <div class="container">
         <div class="card">
         <div class="card-header">
 
@@ -21,8 +22,9 @@
                 <div class="card-body">
                 <div class="row">
                 <c:forEach var="c" items="${courseSearch}">
-                    <div class="col-sm-4 mb-3">
+                    <div class="col-sm-4 mb-4">
                         <div class="card h-100">
+                            <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
                             <div class="card-body">
                                 <h6 class="card-title">${c.course_name}</h6>
                                 <h5 class="card-title text-danger">
@@ -50,5 +52,6 @@
             </c:otherwise>
         </c:choose>
         </div>
+       </div>
     </jsp:body>
 </t:main>

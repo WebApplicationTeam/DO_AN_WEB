@@ -95,9 +95,10 @@
 
                 <div class="card-deck card_carousel owl-carousel">
 
-                    <c:forEach var="coursetop10" items="${coursetop10}">
-                            <div class="card h-100 card_hover mb-5">
+                    <c:forEach var="c" items="${coursetop10}">
 
+                            <div class="card h-100 card_hover mb-5">
+                                <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
                                 <div class="card-body card_size">
                                     <h5 class="card-title">${c.course_name}</h5>
                                     <p class="card-text">${c.course_tiny_desc}</p>

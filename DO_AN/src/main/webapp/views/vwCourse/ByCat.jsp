@@ -25,7 +25,9 @@
                 <div class="row">
                 <c:forEach var="c" items="${course}">
                     <div class="col-sm-4 mb-3">
+
                         <div class="card h-100 card_box">
+                            <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
                             <div class="card-body card_size">
                                 <h4 class="card-title">${c.course_name}</h4>
                                 <h5 class="card-title text-danger">
