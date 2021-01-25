@@ -62,28 +62,20 @@
                 </p>
             </div>
         </div>
-
         <div class="container">
             <h3 class="texth3">Top Categories</h3>
             <div class="card-deck">
                 <c:forEach var ="c" items="${topcat}">
                     <div class="card">
-
                         <div class="card-body">
-
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByCat?id=${c.cat_id}">  <h5 class="card-title">${c.cat_name}</h5></a>
                         </div>
                     </div>
                 </c:forEach>
             </div>
         </div>
-
-
-
         <div class="container">
-
                 <div class="card-deck card_carousel owl-carousel">
-
                     <c:forEach var="c" items="${coursetop10}">
                             <div class="card h-100 card_hover mb-5">
                                 <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
@@ -103,15 +95,12 @@
                     </c:forEach>
                 </div>
         </div>
-
         <div class="container">
             <div class="texth3">
                 <h3>New</h3>
             </div>
             <div class="card-deck card_carousel owl-carousel">
-
                 <c:forEach var="c" items="${newweek}">
-
                     <div class="card h-100 card_hover mb-5">
                         <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
                         <div class="card-body card_size">
@@ -119,7 +108,7 @@
                             <div class="Stars" style="--rating: ${c.rating};" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
                             <p class="card-text card_price">${c.price}</p>
                             <div class="ui-but">
-                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                <a class="btn btn-sm btn btn-warning" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
                                     Detail<i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -129,16 +118,12 @@
                 </c:forEach>
             </div>
         </div>
-
-
         <div class="container">
             <div class="texth3">
                 <h3>Student are Viewing</h3>
             </div>
             <div class="card-deck card_carousel owl-carousel">
-
                 <c:forEach var="c" items="${toppart}">
-
                     <div class="card h-100 card_hover mb-5">
                         <img src="${pageContext.request.contextPath}/public/categories/${c.course_id}/main.jpg" alt="${c.course_name}" title="" class="card-img-top"/>
                         <div class="card-body card_size">
@@ -146,7 +131,7 @@
                             <div class="Stars" style="--rating: ${c.rating};" aria-label="Rating of this product is 2.3 out of 5."><span style="font-weight: bold ;color: #ffcc00">${c.rating}</span></div>
                             <p class="card-text card_price">${c.price}</p>
                             <div class="ui-but">
-                                <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                <a class="btn btn-sm btn btn-warning" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
                                     Detail<i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -156,23 +141,5 @@
                 </c:forEach>
             </div>
         </div>
-
-        <div class="container">
-            <h3 class="texth3">Top Categories</h3>
-            <div class="card-deck">
-                <c:forEach var ="c" items="${topcat}">
-                    <div class="card">
-
-                        <div class="card-body">
-
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Course/ByCat?id=${c.cat_id}">  <h5 class="card-title">${c.cat_name}</h5></a>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </div>
-
-
     </jsp:body>
-
 </t:main>
