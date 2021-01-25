@@ -167,7 +167,7 @@ public class CourseModel {
     }
 
     public static void add(Course course) {
-        final String sql = "INSERT INTO course ( course_name, course_tiny_desc, course_full_desc, rating,teacher_id, last_update,amount_chapter,complete,cat_id,price,dateCreate) VALUES (:course_name, :course_tiny_desc, :course_full_desc, 0,:teacher_id, :last_update,:amount_chapter,0,:cat_id,:price,:dateCreate)";
+        final String sql = "INSERT INTO course ( course_name, course_tiny_desc, course_full_desc, rating,teacher_id, last_update,amount_chapter,complete,cat_id,price,dateCreated) VALUES (:course_name, :course_tiny_desc, :course_full_desc, 0,:teacher_id, :last_update,:amount_chapter,0,:cat_id,:price,:dateCreated)";
         try (Connection con = DbUtils.getConnection()) {
             con.createQuery(sql)
                     .addParameter("course_name", course.getCourse_name())
@@ -178,7 +178,7 @@ public class CourseModel {
                     .addParameter("amount_chapter",course.getAmount_chapter())
                     .addParameter("cat_id",course.getCat_id())
                     .addParameter("price",course.getPrice())
-                    .addParameter("dateCreate", course.getDateCreated())
+                    .addParameter("dateCreated", course.getDateCreated())
                     .executeUpdate();
         }
     }

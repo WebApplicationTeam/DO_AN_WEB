@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,10 +28,42 @@ public class CourseServlet extends HttpServlet {
             case "/Search":
                 ServletUtils.redirect("/Course/Search", request, response);
                 break;
+            case "/Add":
+                addnewCourse(request,response);
+                break;
+            case "/Register":
+                addCourseRe(request,response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
+    }
+    private void addnewCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("course_name");
+        String course_tiny_desc = request.getParameter("course_tiny_desc");
+        String course_full_desc = request.getParameter("course_full_desc");
+        int teacher_id = Integer.parseInt(request.getParameter("teacher_id"));
+        int cat_id = Integer.parseInt(request.getParameter("cat_id"));
+        Date dou = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            dou = formatter.parse(request.getParameter("dou"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Date doc = new Date();
+        SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            doc = formatter1.parse(request.getParameter("doc"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        int amount_chapter = Integer.parseInt(request.getParameter("amount_chapter"));
+        int price = Integer.parseInt(request.getParameter("price"));
+        Course c = new Course(-1 ,teacher_id, amount_chapter, cat_id, name, course_tiny_desc,course_full_desc,price,dou,doc);
+        CourseModel.add(c);
+        ServletUtils.redirect("/Course/Add", request, response);
     }
     private void addCourseRe(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int cIDRe = Integer.parseInt(request.getParameter("id"));

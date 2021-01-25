@@ -51,7 +51,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">&nbsp;</a>
             </li> <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Categories</a>
 
@@ -127,9 +127,9 @@
                             <c:when test="${authUser.permission==1}">
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile?id=${authUser.id}">
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/Course/Add">
                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                        Course Manager
+                                        Add Course
                                     </a>
 
                                     <div class="dropdown-divider"></div>

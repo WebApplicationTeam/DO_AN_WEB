@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h4>Courses</h4>
-                        <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/Admin/Course/AddCourse" role="button">
+                        <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/Course/Add" role="button">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                             Add Course
                         </a>

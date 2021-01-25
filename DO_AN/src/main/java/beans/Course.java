@@ -63,6 +63,20 @@ public class Course {
         this.price = price;
     }
 
+
+    public Course(int course_id, int teacher_id, int amount_chapter, int cat_id, String course_name, String course_tiny_desc, String course_full_desc, float price, Date last_update, Date dateCreated) {
+        this.course_id = course_id;
+        this.teacher_id = teacher_id;
+        this.amount_chapter = amount_chapter;
+        this.cat_id = cat_id;
+        this.course_name = course_name;
+        this.course_tiny_desc = course_tiny_desc;
+        this.course_full_desc = course_full_desc;
+        this.price = price;
+        this.last_update = last_update;
+        this.dateCreated = dateCreated;
+    }
+
     public Date getDateCreated() {
         return dateCreated;
     }
