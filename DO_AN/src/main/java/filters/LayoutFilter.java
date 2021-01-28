@@ -23,6 +23,8 @@ public class LayoutFilter implements Filter {
         List<CatParent> parentList = CatParentModel.getAll();
         req.setAttribute("catparent",parentList);
 
+        String search = req.getParameter("search");
+        req.setAttribute("search",search);
         chain.doFilter(req, resp);
     }
     public void init(FilterConfig config) throws ServletException {
