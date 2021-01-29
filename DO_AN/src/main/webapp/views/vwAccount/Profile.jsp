@@ -46,6 +46,11 @@
                                                 <td>${c.rating}</td>
                                                 <td>${c.price}</td>
                                                 <td class="text-right">
+                                                    <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Course/Detail?id=${c.course_id}" role="button">
+                                                        Detail<i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
                                                     <button class="btn btn-sm btn-outline-primary" type="submit" formaction="${pageContext.request.contextPath}/Account/DeleteFAV?id=${c.course_id}&q=${authUser.id}" >
                                                         <i class="fa fa-heart" aria-hidden="true" id="heart"  ></i>
 
